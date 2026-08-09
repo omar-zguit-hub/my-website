@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { skills } from "../data/skills";
+
 function Skills() {
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -17,31 +18,39 @@ function Skills() {
             {skill.category}
           </h3>
           <div className="space-y-4">
-            {skill.items.map((s, i) => (
-              <div className="mb-4" key={i}>
-                <div className="flex justify-between">
-                  <span className="text-sm font-medium text-gray-300">
-                    {s.name}
-                  </span>
-                  <span className="text-sm font-medium text-gray-300">
-                    {s.level}
-                  </span>
+            {skill.items.map((s, i) => {
+              const Icon = s.icon;
+              return (
+                <div className="flex items-center w-full gap-2">
+                  <div className="text-xl">
+                    <Icon size={22}/>
+                  </div>
+                  <div className=" flex-1 min-w-0 mb-4" key={i}>
+                    <div className="flex justify-between">
+                      <span className="text-sm font-medium text-gray-300">
+                        {s.name}
+                      </span>
+                      <span className="text-sm font-medium text-gray-300">
+                        {s.level}
+                      </span>
+                    </div>
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      className="h-2.5 bg-gray-700 rounded-full"
+                    >
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${s.level}%` }}
+                        transition={{ duration: 0.5, delay: i * 0.1 }}
+                        className="h-2.5 bg-blue-600 rounded-full"
+                      />
+                    </motion.div>
+                  </div>
                 </div>
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="h-2.5 bg-gray-700 rounded-full"
-                >
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${s.level}%` }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="h-2.5 bg-blue-600 rounded-full"
-                  />
-                </motion.div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       ))}
