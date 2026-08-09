@@ -4,20 +4,15 @@ import { FiExternalLink } from "react-icons/fi";
 import { motion } from "motion/react";
 
 function Projects() {
-  const contentVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
-  };
   const renderProjects = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 mx-auto max-w-5xl">
         {projects.map((p, i) => (
           <motion.div
             key={p.title}
-            initial="hidden"
-            animate="visible"
-            variants={contentVariants}
-            transition={{ delay: i * 0.1 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
             className="bg-gray-800 rounded-lg overflow-hidden"
           >
             <img
@@ -70,10 +65,9 @@ function Projects() {
   };
   return (
     <motion.div
-      initial="hidden"
-      animate="visible"
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      variants={contentVariants}
       className="flex-1 overflow-auto bg-gray-900 text-gray-100"
     >
       {renderProjects()}
