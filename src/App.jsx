@@ -12,17 +12,20 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="flex bg-gray-900 h-screen text-white">
-      <Sidebar />
+    <div className="flex bg-gray-900 h-screen text-white overflow-hidden">
+      <aside className="w-20 shrink-0">
+        <Sidebar />
+      </aside>
       {/* <Explorer /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route element={<Content />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
       </Routes>
-      <Content />
     </div>
   );
 }
