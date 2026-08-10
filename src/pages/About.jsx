@@ -89,24 +89,6 @@ function About() {
           and tools appearing all the time. I focus on building a strong
           foundation in the core concepts while learning modern technologies and
           improving my skills through practical projects.
-        </p> 
-
-        <p className="text-gray-300 leading-7 mt-4">
-          I strengthen my{" "}
-          <Link
-            to="/skills"
-            className="text-blue-400 hover:text-blue-300 transition"
-          >
-            skills
-          </Link>{" "}
-          by building practical{" "}
-          <Link
-            to="/projects"
-            className="text-blue-400 hover:text-blue-300 transition"
-          >
-            projects
-          </Link>{" "}
-          and exploring new technologies.
         </p>
       </div>
 
@@ -131,8 +113,7 @@ function About() {
 
             <p className="text-gray-300 mt-3 leading-6">
               Building full-stack web applications and developing practical
-              experience with React, Laravel and
-              MySQL.
+              experience with React, Laravel and MySQL.
             </p>
           </div>
 
@@ -152,6 +133,68 @@ function About() {
               Creating responsive interfaces, working with APIs and databases,
               using Git and GitHub for version control, and exploring modern
               development tools and practices.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= Education ================= */}
+      <div className="px-6 pb-6">
+        <h2 className="text-2xl font-bold text-white mb-5">Education</h2>
+
+        <div className="space-y-6">
+          <div className="border-l-2 border-blue-500 pl-5">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <h3 className="text-lg font-semibold text-white">
+                Development Digital
+              </h3>
+            </div>
+
+            <p className="text-blue-400 text-sm mt-1">
+              OFPPT — Digital Development
+            </p>
+
+            <p className="text-gray-300 mt-3 leading-6">
+              Earned a professional diploma in Digital Development, with
+              training in front-end and back-end development. Developed
+              practical{" "}
+              <Link
+                to="/skills"
+                className="text-blue-400 hover:text-blue-300 transition"
+              >
+                <mark>
+                  <em>skills</em>
+                </mark>
+              </Link>{" "}
+              that allowed me to build and work on various{" "}
+              <Link
+                to="/projects"
+                className="text-blue-400 hover:text-blue-300 transition"
+              >
+                <mark>
+                  <em>projects</em>
+                </mark>
+              </Link>{" "}
+              throughout my training.
+            </p>
+          </div>
+          {/* 2 */}
+          <div className="border-l-2 border-gray-600 pl-5">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <h3 className="text-lg font-semibold text-white">
+                Self-Learning
+              </h3>
+            </div>
+
+            <p className="text-blue-400 text-sm mt-1">
+              Continuous Learning & Exploration
+            </p>
+
+            <p className="text-gray-300 mt-3 leading-6">
+              Continuously learning and exploring Digital Development,
+              Artificial Intelligence, modern technologies, and new development
+              tools to expand my knowledge and stay up to date with the evolving
+              tech ecosystem.
             </p>
           </div>
         </div>

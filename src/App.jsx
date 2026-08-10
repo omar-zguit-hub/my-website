@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-// import Explorer from "./components/Explorer";
+import Explorer from "./components/Explorer";
 import Sidebar from "./components/Sidebar";
 import Content from "./components/Content";
 import Home from "./pages/Home";
@@ -16,7 +16,7 @@ function App() {
       <aside className="w-20 shrink-0">
         <Sidebar />
       </aside>
-      {/* <Explorer /> */}
+      <Explorer />
       <Routes>
         <Route element={<Content />}>
           <Route path="/" element={<Home />} />
