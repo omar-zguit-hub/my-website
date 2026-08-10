@@ -1,14 +1,17 @@
-import { File, Mail, Code, User } from "lucide-react";
+import { Mail, Code, User } from "lucide-react";
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsHouses } from "react-icons/bs";
+
+import { FaLaptopCode } from "react-icons/fa";
+
  
 import { Link, useLocation } from "react-router-dom";
 function Sidebar() {
   const location = useLocation();
   const sideBarItems = [
     { id: "", label: "Home", icon: BsHouses },
-    { id: "projects", label: "Projects", icon: File },
+    { id: "projects", label: "Projects", icon: FaLaptopCode },
     { id: "skills", label: "Skills", icon: Code },
     { id: "about", label: "About", icon: User },
     { id: "contact", label: "Contact", icon: Mail },
@@ -27,7 +30,7 @@ function Sidebar() {
           >
             <Link
               to={path}
-              className={`p-3 mb-2 rounded-lg flex items-center justify-center
+              className={`p-3 mb-2  flex items-center justify-center
                 ${
                   isActive
                     ? "border-l-3 border-blue-600 text-white"
@@ -64,4 +67,5 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default Sidebar; 
+ 

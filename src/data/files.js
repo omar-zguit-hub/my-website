@@ -185,6 +185,36 @@ const aboutFiles = [
   },
 ];
 
+const HomeFiles = [
+  {
+    name: "Home",
+    type: "folder",
+    isOpen: true,
+    children: [
+      {
+        name: "profile.js",
+        type: "file",
+        language: "javascript",
+      },
+      {
+        name: "skills.js",
+        type: "file",
+        language: "javascript",
+      },
+      {
+        name: "projects.js",
+        type: "file",
+        language: "javascript",
+      },
+      {
+        name: "about.js",
+        type: "file",
+        language: "javascript",
+      },
+    ],
+  },
+];
+
 const contactFiles = [
   {
     name: "Contact",
@@ -207,6 +237,8 @@ const contactFiles = [
 
 export const getFileStructure = (path) => {
   switch (path) {
+    case "/":
+      return HomeFiles;
     case "/projects":
       return projectFiles;
     case "/skills":
@@ -216,6 +248,6 @@ export const getFileStructure = (path) => {
     case "/contact":
       return contactFiles;
     default:
-      return projectFiles;
+      return HomeFiles;
   }
 };

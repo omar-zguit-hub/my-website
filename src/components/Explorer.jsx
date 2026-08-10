@@ -46,7 +46,7 @@ const Explorer = () => {
   };
 
   return (
-    <div className="bg-gray-800 h-screen overflow-y-auto w-55">
+    <div className="bg-gray-800 h-screen overflow-y-auto w-55 pt-2">
       <div className="p-2">
         <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
           Explorer

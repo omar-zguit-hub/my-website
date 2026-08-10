@@ -23,12 +23,12 @@ export const skills = [
     category: "Frontend",
     items: [
       { name: "HTML", level: 95, icon: FaHtml5 },
-      { name: "CSS", level: 76, icon: FaCss3Alt },
-      { name: "JavaScript", level: 69, icon: IoLogoJavascript },
-      { name: "Material UI", level: 69, icon: SiMui },
-      { name: "Bootstrap", level: 55, icon: FaBootstrap },
-      { name: "React", level: 75, icon: FaReact },
-      { name: "Tailwind CSS", level: 55, icon: RiTailwindCssFill },
+      { name: "CSS", level: 75, icon: FaCss3Alt },
+      { name: "JavaScript", level: 70, icon: IoLogoJavascript },
+      { name: "Material UI", level: 85, icon: SiMui },
+      { name: "Bootstrap", level: 85, icon: FaBootstrap },
+      { name: "React", level: 90, icon: FaReact },
+      { name: "Tailwind CSS", level: 30, icon: RiTailwindCssFill },
     ],
   },
 
@@ -36,9 +36,9 @@ export const skills = [
     category: "Backend",
     items: [
       { name: "Python", level: 60, icon: FaPython },
-      { name: "PHP", level: 65, icon: FaPhp },
+      { name: "PHP", level: 60, icon: FaPhp },
       { name: "Laravel", level: 60, icon: FaLaravel },
-      { name: "Express.js", level: 50, icon: FaNodeJs },
+      { name: "Express.js", level: 45, icon: FaNodeJs },
     ],
   },
 
@@ -53,12 +53,12 @@ export const skills = [
   {
     category: "Tools & Platforms",
     items: [
-      { name: "VS Code", level: 85, icon: VscVscode },
-      { name: "Git", level: 65, icon: SiGit },
-      { name: "GitHub", level: 65, icon: SiGithub },
-      { name: "Postman", level: 55, icon: SiPostman },
-      { name: "Docker", level: 40, icon: FaDocker },
-      { name: "WordPress", level: 40, icon: FaWordpress },
+      { name: "VS Code", level: 99, icon: VscVscode },
+      { name: "Git", level: 95, icon: SiGit },
+      { name: "GitHub", level: 75, icon: SiGithub },
+      { name: "Postman", level: 85, icon: SiPostman },
+      { name: "Docker", level: 30, icon: FaDocker },
+      { name: "WordPress", level: 30, icon: FaWordpress },
     ],
   },
 ];
