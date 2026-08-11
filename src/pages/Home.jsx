@@ -45,11 +45,11 @@ const Home = () => {
               <div>
                 <span className="text-lg text-purple-400">const</span>
 
-                <span className="mx-3 text-lg text-blue-400">developer </span>
+                <span className="mx-3 text-lg text-blue-400">developer</span>
 
-                <span className="mx-2 text-lg text-zinc-300">=</span>
+                <span className="ml-1 text-lg text-zinc-300">=</span>
 
-                <span className="text-lg text-yellow-400">{"{"}</span>
+                <span className="ml-3 text-lg text-yellow-400">{"{"}</span>
               </div>
 
               {/* Line 2 */}
@@ -108,7 +108,7 @@ const Home = () => {
                 <span className="text-lg text-zinc-300">,</span>
               </div>
 
-              {/* Line 16 */}
+              {/* Line 6 */}
               <div className="pl-8">
                 <span className="text-lg text-sky-300">skills</span>
  
@@ -120,7 +120,7 @@ const Home = () => {
                 <span className=" text-lg text-zinc-300">,</span>
               </div>
 
-              {/* Line 14 */}
+              {/* Line 7 */}
               <div className="pl-8">
                 <span className="text-lg text-sky-300">projects</span>
 
@@ -131,7 +131,7 @@ const Home = () => {
                 <span className="text-lg text-zinc-300">,</span>
               </div>
 
-              {/* Line 15 */}
+              {/* Line 8 */}
               <div className="pl-8">
                 <span className="text-lg text-sky-300">moreAboutMe</span>
  
@@ -143,7 +143,7 @@ const Home = () => {
                 <span className="text-lg text-zinc-300">,</span>
               </div>
 
-              {/* Line 17 */}
+              {/* Line 9 */}
               <div className="pl-8">
                 <span className="text-lg text-sky-300">available</span>
 
@@ -154,14 +154,14 @@ const Home = () => {
                 <span className="text-lg text-zinc-300">,</span>
               </div>
 
-              {/* Line 18 */}
+              {/* Line 10 */}
               <div className="pl-8">
                 <span className="text-lg text-green-600">
                   // Always learning. Always building.
                 </span>
               </div>
 
-              {/* Line 19 */}
+              {/* Line 11 */}
               <div>
                 <span className="text-lg text-yellow-400">{"}"}</span>
                 <span className="ml-2 animate-pulse text-lg text-zinc-400">

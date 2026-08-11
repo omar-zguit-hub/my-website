@@ -5,10 +5,18 @@ import { BsHouses } from "react-icons/bs";
 
 import { FaLaptopCode } from "react-icons/fa";
 
- 
 import { Link, useLocation } from "react-router-dom";
-function Sidebar() {
+function Sidebar({ setExplorerOpen }) {
   const location = useLocation();
+
+  const handleSidebarClick = (path) => {
+    if (location.pathname === path) {
+      setExplorerOpen((prev) => !prev);
+    } else {
+      setExplorerOpen(true);
+    }
+  };
+
   const sideBarItems = [
     { id: "", label: "Home", icon: BsHouses },
     { id: "projects", label: "Projects", icon: FaLaptopCode },
@@ -16,8 +24,9 @@ function Sidebar() {
     { id: "about", label: "About", icon: User },
     { id: "contact", label: "Contact", icon: Mail },
   ];
+  
   return (
-    <div className="w-16 bg-gray-900 h-screen flex flex-col py-4 items-center">
+    <div className="w-16 bg-gray-900 h-screen flex flex-col py-1 pb-4 items-center">
       {sideBarItems.map((item) => {
         const Icon = item.icon;
         const path = item.id ? `/${item.id}` : "/";
@@ -30,6 +39,7 @@ function Sidebar() {
           >
             <Link
               to={path}
+              onClick={() => handleSidebarClick(path)}
               className={`p-3 mb-2  flex items-center justify-center
                 ${
                   isActive
@@ -38,7 +48,7 @@ function Sidebar() {
                 }
               `}
             >
-              <Icon size={24}/>
+              <Icon size={24} />
             </Link>
           </motion.div>
         );
@@ -58,7 +68,7 @@ function Sidebar() {
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.2 }}
-          className="p-3 text-gray-400 hover:text-white block mb-4"
+          className="p-3 text-gray-400 hover:text-white block mb-3"
         >
           <FaLinkedin size={24} />
         </motion.a>
@@ -67,5 +77,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar; 
- 
+export default Sidebar;

@@ -12,7 +12,7 @@ function Content() {
       initial="hidden"
       animate="visible"
       variants={contentVariants}
-      className="flex-1 min-w-0 min-h-0 overflow-y-auto bg-gray-900 text-gray-100"
+      className="flex-1 min-w-0 min-h-0 overflow-y-auto bg-gray-900 text-gray-100 pb-4"
     >
       <Outlet />
     </motion.main>

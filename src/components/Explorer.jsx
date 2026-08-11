@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getFileStructure } from "../data/files";
 import FileTreeItem from "./explorer/FileTreeItem";
 import { useLocation } from "react-router-dom";
+import { motion } from "motion/react";
 
 const Explorer = () => {
   const location = useLocation();
@@ -46,7 +47,12 @@ const Explorer = () => {
   };
 
   return (
-    <div className="bg-gray-800 h-screen overflow-y-auto w-55 pt-2">
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.3 }}
+      className="bg-gray-800 h-screen overflow-y-auto w-55 pt-1 pb-6"
+    >
       <div className="p-2">
         <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
           Explorer
@@ -65,7 +71,7 @@ const Explorer = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

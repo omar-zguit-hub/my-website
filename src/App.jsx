@@ -10,16 +10,18 @@ import Skills from "./pages/Skills";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 function App() {
+  const [explorerOpen, setExplorerOpen] = useState(true);
   return (
     <div className="flex h-screen overflow-hidden bg-gray-900 text-white">
       <aside className="w-20 shrink-0">
-        <Sidebar />
+        <Sidebar explorerOpen={explorerOpen} setExplorerOpen={setExplorerOpen} />
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex min-h-0 flex-1">
-          <Explorer />
+          {explorerOpen && <Explorer />}
           <Routes>
             <Route element={<Content />}>
               <Route path="/" element={<Home />} />
@@ -30,7 +32,7 @@ function App() {
             </Route>
           </Routes>
         </div>
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

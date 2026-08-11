@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="flex items-center gap-4 justify-self-start">
         <span>✓ main</span>
 
-        <span className="text-green-400">●</span>
+        <span className="text-green-700 justify-center animate-pulse">●</span>
         <span>Available</span>
       </div>
 
