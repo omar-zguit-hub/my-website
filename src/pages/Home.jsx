@@ -17,7 +17,7 @@ const Home = () => {
             </div>
 
             {/* File name */}
-            <span className="ml-3 text-xs text-zinc-400">developer.js</span>
+            <span className="ml-3 text-xs text-zinc-400">profile.js</span>
           </div>
         </div>
 

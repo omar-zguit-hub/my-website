@@ -58,7 +58,7 @@ function Sidebar() {
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.2 }}
-          className="p-3 text-gray-400 hover:text-white block mb-2"
+          className="p-3 text-gray-400 hover:text-white block mb-4"
         >
           <FaLinkedin size={24} />
         </motion.a>
