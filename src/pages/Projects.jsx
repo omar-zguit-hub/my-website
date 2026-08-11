@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 function Projects() {
   const renderProjects = () => {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 mx-auto max-w-5xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-4 px-2 mx-auto max-w-5xl">
         {projects.map((p, i) => (
           <motion.div
             key={p.title}

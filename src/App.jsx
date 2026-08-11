@@ -16,7 +16,7 @@ function App() {
   const [explorerOpen, setExplorerOpen] = useState(true);
   return (
     <div className="flex h-screen overflow-hidden bg-gray-900 text-white">
-      <aside className="w-20 shrink-0">
+      <aside className="w-17 shrink-0">
         <Sidebar explorerOpen={explorerOpen} setExplorerOpen={setExplorerOpen} />
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
