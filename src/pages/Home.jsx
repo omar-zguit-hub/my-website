@@ -1,9 +1,11 @@
+import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
-
+import skills from "../assets/skills.png";
+import { motion } from "motion/react";
 const EditorCard = ({ title, children, className = "" }) => {
   return (
     <section className={`sticky min-h-screen w-full px-6 pt-20 ${className}`}>
-      <div className="mx-auto w-full max-w-4xl h-[450px] overflow-hidden rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
+      <div className="mx-auto w-200 max-w-4xl h-[450px] overflow-hidden rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
         {/* VS Code Header */}
         <div className="flex h-11 items-center border-b border-zinc-700 bg-[#181818] px-4">
           <div className="flex items-center gap-2">
@@ -16,7 +18,7 @@ const EditorCard = ({ title, children, className = "" }) => {
         </div>
 
         {/* Content */}
-        <div className="bg-[#1e1e1e] px-2 py-6 font-mono text-lg leading-9">
+        <div className="flex-1 min-h-0 w-full overflow-hidden bg-[#1e1e1e]">
           {children}
         </div>
       </div>
@@ -29,7 +31,7 @@ const Home = () => {
     <main className="min-h-screen w-full bg-[#0d1117]">
       {/* CARD 1 — PROFILE */}
       <EditorCard title="profile.js" className="sticky top-0 z-10 pt-6 pt-20 ">
-        <div className="flex">
+        <div className="flex mt-10">
           {/* Line numbers */}
           <div className="w-16 shrink-0 select-none pr-5 text-right text-lg text-zinc-600">
             <div>1</div>
@@ -198,121 +200,59 @@ const Home = () => {
 
       {/* CARD 2 — PROJECTS */}
       <EditorCard title="projects.js" className="sticky top-2 z-20 pt-10 ml-1">
-        <div className="p-8">
-          <div>
-            <span className="text-purple-400">const</span>{" "}
-            <span className="text-blue-400">projects</span>{" "}
-            <span className="text-zinc-300">=</span>{" "}
-            <span className="text-yellow-400">[</span>
-          </div>
-
-          <div className="mt-4 pl-8">
-            <span className="text-yellow-400">{"{"}</span>
-          </div>
-
-          <div className="pl-16">
-            <span className="text-sky-300">name</span>
-
-            <span className="mx-3 text-zinc-300">:</span>
-
-            <span className="text-orange-300">"HousTalib"</span>
-
-            <span className="text-zinc-300">,</span>
-          </div>
-
-          <div className="pl-16">
-            <span className="text-sky-300">type</span>
-
-            <span className="mx-3 text-zinc-300">:</span>
-
-            <span className="text-orange-300">"Full-Stack Application"</span>
-          </div>
-
-          <div className="pl-16">
-            <span className="text-sky-300">stack</span>
-
-            <span className="mx-3 text-zinc-300">:</span>
-
-            <span className="text-orange-300">"React + Laravel + MySQL"</span>
-          </div>
-
-          <div className="pl-8">
-            <span className="text-yellow-400">{"}"}</span>
-          </div>
-
-          <div className="mt-4">
-            <span className="text-yellow-400">]</span>
-          </div>
+        <div className="flex gap-4 w-full overflow-x-auto">
+          {projects.map((p, i) => (
+            <motion.div
+              key={p.name || i}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.25,
+                // ease: "easeOut",
+              }}
+              className="shrink-0 w-[80%] "
+            >
+              <img
+                src={p.image}
+                alt={p.name}
+                className="block w-full h-auto object-cover rounded-lg"
+              />
+            </motion.div>
+          ))}
         </div>
       </EditorCard>
 
       {/* CARD 3 — SKILLS */}
       <EditorCard title="skills.js" className="sticky top-4 z-30 pt-20 ml-2">
-        <div className="p-8">
-          <div>
-            <span className="text-purple-400">const</span>{" "}
-            <span className="text-blue-400">skills</span>{" "}
-            <span className="text-zinc-300">=</span>{" "}
-            <span className="text-yellow-400">{"{"}</span>
-          </div>
-
-          <div className="mt-4 pl-8">
-            <span className="text-sky-300">frontend</span>
-
-            <span className="mx-3 text-zinc-300">:</span>
-
-            <span className="text-orange-300">
-              ["React", "JavaScript", "HTML", "CSS"]
-            </span>
-          </div>
-
-          <div className="pl-8">
-            <span className="text-sky-300">backend</span>
-
-            <span className="mx-3 text-zinc-300">:</span>
-
-            <span className="text-orange-300">
-              ["Laravel", "PHP", "MySQL", "REST API"]
-            </span>
-          </div>
-
-          <div>
-            <span className="text-yellow-400">{"}"}</span>
-          </div>
+        <div className="h-full w-full">
+          <img
+            src={skills}
+            alt="skills"
+            className="block h-full w-full object-cover "
+          />
         </div>
       </EditorCard>
 
       {/* CARD 4 — ABOUT */}
       <EditorCard title="about.js" className="sticky top-20 z-50 pt-20 ml-3">
-        <div className="p-8">
-          <div>
-            <span className="text-purple-400">const</span>{" "}
-            <span className="text-blue-400">aboutMe</span>{" "}
-            <span className="text-zinc-300">=</span>{" "}
-            <span className="text-yellow-400">{"{"}</span>
-          </div>
+        <div className="min-h-[400px] w-full flex flex-col items-center justify-center text-center px-8">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-[-0.01em] font-mono text-neutral-500">
+            DRY
+          </h1>
 
-          <div className="mt-4 pl-8">
-            <span className="text-sky-300">role</span>
-
-            <span className="mx-3 text-zinc-300">:</span>
-
-            <span className="text-orange-300">
-              "Junior Fullstack Developer"
+          <a
+            href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="  font-mono text-base md:text-lg tracking-wide text-neutral-500 hover:text-neutral-300 transition-colors duration-200 relative group"
+          >
+            <span className="text-neutral-600">"</span>
+            <span className="group-hover:underline underline-offset-4">
+              Don't Repeat Yourself
             </span>
-          </div>
-
-          <div className="pl-8">
-            <span className="text-sky-300">passion</span>
-
-            <span className="mx-3 text-zinc-300">:</span>
-
-            <span className="text-orange-300">"Building web applications"</span>
-          </div>
-
-          <div>
-            <span className="text-yellow-400">{"}"}</span>
-          </div>
+            <span className="text-neutral-600">"</span>
+          </a>
         </div>
       </EditorCard>
     </main>

@@ -5,6 +5,11 @@ const projectFiles = [
     isOpen: true,
     children: [
       {
+        name: "HousTalib.jsx",
+        type: "file",
+        language: "JavaScript",
+      },
+      {
         name: "MayaSol.jsx",
         type: "file",
         language: "javascript",
@@ -15,7 +20,12 @@ const projectFiles = [
         language: "JavaScript",
       },
       {
-        name: "HousTalib.jsx",
+        name: "Weather.jsx",
+        type: "file",
+        language: "JavaScript",
+      },
+      {
+        name: "Tic-Tac-Toe.jsx",
         type: "file",
         language: "JavaScript",
       },
@@ -26,6 +36,8 @@ const projectFiles = [
           { name: "preview1.png", type: "file" },
           { name: "preview2.png", type: "file" },
           { name: "preview3.png", type: "file" },
+          { name: "preview4.png", type: "file" },
+          { name: "preview5.png", type: "file" },
         ],
       },
     ],
@@ -197,17 +209,17 @@ const HomeFiles = [
         language: "javascript",
       },
       {
-        name: "skills.js",
-        type: "file",
-        language: "javascript",
-      },
-      {
         name: "projects.js",
         type: "file",
         language: "javascript",
       },
       {
-        name: "about.js",
+        name: "skills.js",
+        type: "file",
+        language: "javascript",
+      },
+      {
+        name: "DRY.js",
         type: "file",
         language: "javascript",
       },
