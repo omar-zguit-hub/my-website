@@ -64,7 +64,7 @@ export const projects = [
       "A classic Tic-Tac-Toe game built with React, featuring interactive gameplay, game state management, and a responsive user interface.",
     technologies: ["React", "Material UI"],
     githubUrl: "https://github.com/omar-zguit-hub/Tic-Tac-Toe",
-    liveUrl: "",
-    image: TicTacToe,
-  },
-];
+    liveUrl: "",      
+    image: TicTacToe, 
+  },                  
+];                    
