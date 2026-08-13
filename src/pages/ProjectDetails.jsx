@@ -4,13 +4,19 @@ import { motion } from "motion/react";
 
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-
-import { FiChevronLeft, FiChevronRight, FiArrowLeft } from "react-icons/fi";
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiArrowLeft,
+  FiArrowRight,
+} from "react-icons/fi";
 
 import { projects } from "../data/projects";
+import { useTranslation } from "react-i18next";
 
 function ProjectDetails() {
   const { id } = useParams();
+  const { t, i18n } = useTranslation();
 
   const project = projects.find((p) => p.id === parseInt(id));
 
@@ -20,10 +26,15 @@ function ProjectDetails() {
     return (
       <div className="flex min-h-full items-center justify-center bg-[#1e1e1e] text-white">
         <div className="text-center">
-          <h1 className="mb-2 text-2xl font-bold">Projet introuvable</h1>
+          <h1 className="mb-2 text-2xl font-bold">
+            {t("projectDetails.notFound")}
+          </h1>
 
-          <Link to="/" className="text-blue-400 transition hover:text-blue-300">
-            Retour aux projets
+          <Link
+            to="/projects"
+            className="text-blue-400 transition hover:text-blue-300"
+          >
+            {t("projectDetails.backToProjects")}
           </Link>
         </div>
       </div>
@@ -43,22 +54,29 @@ function ProjectDetails() {
   return (
     <div className="flex-1 min-h-0 w-full overflow-y-auto bg-[#1e1e1e] text-white">
       <div className="mx-auto w-full max-w-6xl px-2 py-6 md:px-8">
-        {/* En-tête */}
+        {/* Header */}
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-bold md:text-2xl">Détails du projet</h1>
+            <h1 className="text-lg font-bold md:text-2xl">
+              {t("projectDetails.title")}
+            </h1>
           </div>
 
           <Link
             to="/projects"
             className="flex items-center gap-2 rounded-lg border border-gray-700 px-3 py-2 text-sm text-gray-300 transition hover:border-gray-500 hover:text-white"
           >
-            <FiArrowLeft size={17} />
-            Retour
+            {i18n.language === "ar" ? (
+              <FiArrowRight size={17} />
+            ) : (
+              <FiArrowLeft size={17} />
+            )}
+
+            {t("projectDetails.back")}
           </Link>
         </div>
 
-        {/* Galerie d'images */}
+        {/* Image Gallery */}
         <section className="relative z-0 mx-auto mb-6 w-full max-w-4xl overflow-hidden rounded-xl border border-gray-800 bg-[#252526]">
           <motion.div
             key={currentImage}
@@ -69,35 +87,37 @@ function ProjectDetails() {
           >
             <img
               src={images[currentImage]}
-              alt={`${project.title} capture ${currentImage + 1}`}
+              alt={`${t(project.title)} ${t("projectDetails.screenshot")} ${
+                currentImage + 1
+              }`}
               className="block h-full w-full object-contain"
             />
 
-            {/* Précédente */}
+            {/* Previous */}
             {images.length > 1 && (
               <button
                 type="button"
                 onClick={previousImage}
-                aria-label="Image précédente"
+                aria-label={t("projectDetails.previousImage")}
                 className="absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black cursor-pointer"
               >
                 <FiChevronLeft size={22} />
               </button>
             )}
 
-            {/* Suivante */}
+            {/* Next */}
             {images.length > 1 && (
               <button
                 type="button"
                 onClick={nextImage}
-                aria-label="Image suivante"
+                aria-label={t("projectDetails.nextImage")}
                 className="absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black cursor-pointer"
               >
                 <FiChevronRight size={22} />
               </button>
             )}
 
-            {/* Compteur */}
+            {/* Counter */}
             {images.length > 1 && (
               <div className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-black/70 px-3 py-1 text-xs text-gray-200 backdrop-blur-sm">
                 {currentImage + 1} / {images.length}
@@ -106,23 +126,23 @@ function ProjectDetails() {
           </motion.div>
         </section>
 
-        {/* Informations du projet */}
+        {/* Project Information */}
         <section className="grid gap-6 md:grid-cols-3">
           {/* Description */}
           <div className="rounded-xl border border-gray-800 bg-[#252526] p-5 md:col-span-2">
             <p className="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500">
-              À propos du projet
+              {t("projectDetails.about")}
             </p>
 
-            <h2 className="mb-3 text-xl font-semibold">{project.title}</h2>
+            <h2 className="mb-3 text-xl font-semibold">{t(project.title)}</h2>
 
-            <p className="leading-7 text-gray-400">{project.description}</p>
+            <p className="leading-7 text-gray-400">{t(project.description)}</p>
           </div>
 
           {/* Technologies */}
           <div className="rounded-xl border border-gray-800 bg-[#252526] p-5">
             <p className="mb-4 text-xs font-medium uppercase tracking-wider text-gray-500">
-              Technologies utilisées
+              {t("projectDetails.technologies")}
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -148,7 +168,7 @@ function ProjectDetails() {
               className="flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-medium text-black transition hover:bg-gray-200"
             >
               <FaGithub size={18} />
-              Voir le code
+              {t("projects.code")}
             </a>
           )}
 
@@ -160,7 +180,7 @@ function ProjectDetails() {
               className="flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-medium text-gray-300 transition hover:border-gray-500 hover:text-white"
             >
               <FiExternalLink size={18} />
-              Démo en ligne
+              {t("projects.liveDemo")}
             </a>
           )}
         </section>

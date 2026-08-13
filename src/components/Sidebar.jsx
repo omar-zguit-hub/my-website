@@ -6,7 +6,9 @@ import { BsHouses } from "react-icons/bs";
 import { FaLaptopCode } from "react-icons/fa";
 
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 function Sidebar({ setExplorerOpen }) {
+    const { i18n } = useTranslation();
   const location = useLocation();
 
   const handleSidebarClick = (path) => {
@@ -42,8 +44,8 @@ function Sidebar({ setExplorerOpen }) {
               onClick={() => handleSidebarClick(path)}
               className={`p-3 mb-2  flex items-center justify-center
                 ${
-                  isActive
-                    ? "border-l-3 border-blue-600 text-white"
+                  isActive  
+                    ?  `${i18n.language === "fr" ? "border-l-3":"border-r-3"} border-blue-600 text-white`
                     : "text-gray-400 hover:text-white"
                 }
               `}

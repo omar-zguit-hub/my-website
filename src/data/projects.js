@@ -35,9 +35,8 @@ import tic3 from "../assets/TicTacToe/tic3.png";
 export const projects = [
   {
     id: 1,
-    title: "HousTalib : Plateforme de logement étudiant",
-    description:
-      "Une plateforme web full-stack qui met en relation les étudiants et les propriétaires afin de faciliter la recherche et la location de logements étudiants.",
+    title: "projects.housTalib.title",
+    description: "projects.housTalib.description",
     technologies: [
       "React",
       "Redux Toolkit",
@@ -53,9 +52,8 @@ export const projects = [
 
   {
     id: 2,
-    title: "MAYASOL : Plateforme E-Commerce",
-    description:
-      "Une application e-commerce full-stack permettant de consulter les produits, gérer le panier, passer des commandes et gérer les produits via une interface d'administration.",
+    title: "projects.mayaSol.title",
+    description: "projects.mayaSol.description",
     technologies: [
       "React",
       "Redux Toolkit",
@@ -72,9 +70,8 @@ export const projects = [
 
   {
     id: 3,
-    title: "Application Liste de tâches",
-    description:
-      "Une application de gestion des tâches permettant aux utilisateurs de créer, organiser, modifier, terminer et gérer leurs tâches quotidiennes grâce à une interface simple.",
+    title: "projects.todoList.title",
+    description: "projects.todoList.description",
     technologies: ["React", "Material UI"],
     githubUrl: "https://github.com/omar-zguit-hub/React-todolist",
     liveUrl: "https://mytaskifyplanner.netlify.app/",
@@ -84,9 +81,8 @@ export const projects = [
 
   {
     id: 4,
-    title: "Application Météo",
-    description:
-      "Une application météo responsive permettant aux utilisateurs de rechercher des villes et de consulter les conditions météorologiques actuelles grâce à une API météo.",
+    title: "projects.weather.title",
+    description: "projects.weather.description",
     technologies: ["React", "Material UI", "OpenWeatherMap API"],
     githubUrl: "https://github.com/omar-zguit-hub/Weather-Now",
     liveUrl: "https://weatherscopenow.netlify.app/",
@@ -96,9 +92,8 @@ export const projects = [
 
   {
     id: 5,
-    title: "Jeu Tic-Tac-Toe",
-    description:
-      "Un jeu classique de Tic-Tac-Toe développé avec React, avec un gameplay interactif, une gestion de l'état du jeu et une interface utilisateur responsive.",
+    title: "projects.ticTacToe.title",
+    description: "projects.ticTacToe.description",
     technologies: ["React", "Material UI"],
     githubUrl: "https://github.com/omar-zguit-hub/Tic-Tac-Toe",
     liveUrl: "https://three-in-arow.netlify.app/",

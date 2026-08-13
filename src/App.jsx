@@ -10,15 +10,28 @@ import Skills from "./pages/Skills";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectDetails from "./pages/ProjectDetails";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const [explorerOpen, setExplorerOpen] = useState(true);
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const isArabic = i18n.language === "ar";
+
+    document.documentElement.dir = isArabic ? "rtl" : "ltr";
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+  
   return (
     <div className="flex h-screen overflow-hidden bg-gray-900 text-white">
       <aside className="w-17 shrink-0">
-        <Sidebar explorerOpen={explorerOpen} setExplorerOpen={setExplorerOpen} />
+        <Sidebar
+          explorerOpen={explorerOpen}
+          setExplorerOpen={setExplorerOpen}
+        />
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex min-h-0 flex-1">

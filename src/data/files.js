@@ -1,6 +1,6 @@
 const projectFiles = [
   {
-    name: "Projets",
+    name: "explorer.projects",
     type: "folder",
     isOpen: true,
     children: [
@@ -12,7 +12,7 @@ const projectFiles = [
       {
         name: "MayaSol.jsx",
         type: "file",
-        language: "javascript",
+        language: "JavaScript",
       },
       {
         name: "TaskManager.jsx",
@@ -30,14 +30,14 @@ const projectFiles = [
         language: "JavaScript",
       },
       {
-        name: "assets",
+        name: "explorer.assets",
         type: "folder",
         children: [
-          { name: "preview1.png", type: "file" },
-          { name: "preview2.png", type: "file" },
-          { name: "preview3.png", type: "file" },
-          { name: "preview4.png", type: "file" },
-          { name: "preview5.png", type: "file" },
+          { name: "img-1.png", type: "file" },
+          { name: "img-2.png", type: "file" },
+          { name: "img-3.png", type: "file" },
+          { name: "img-4.png", type: "file" },
+          { name: "img-5.png", type: "file" },
         ],
       },
     ],
@@ -46,131 +46,55 @@ const projectFiles = [
 
 const skillsFiles = [
   {
-    name: "Compétences",
+    name: "explorer.skills",
     type: "folder",
     isOpen: true,
     children: [
       {
-        name: "Frontend",
+        name: "explorer.frontend",
         type: "folder",
         isOpen: true,
         children: [
-          {
-            name: "HTML.html",
-            type: "file",
-            language: "html",
-          },
-          {
-            name: "CSS.css",
-            type: "file",
-            language: "css",
-          },
-          {
-            name: "JavaScript.js",
-            type: "file",
-            language: "javascript",
-          },
-          {
-            name: "MaterialUI.jsx",
-            type: "file",
-            language: "javascript",
-          },
-          {
-            name: "Bootstrap.css",
-            type: "file",
-            language: "css",
-          },
-          {
-            name: "React.jsx",
-            type: "file",
-            language: "javascript",
-          },
-          {
-            name: "Tailwind.css",
-            type: "file",
-            language: "css",
-          },
+          { name: "HTML.html", type: "file", language: "html" },
+          { name: "CSS.css", type: "file", language: "css" },
+          { name: "JavaScript.js", type: "file", language: "javascript" },
+          { name: "MaterialUI.jsx", type: "file", language: "javascript" },
+          { name: "Bootstrap.css", type: "file", language: "css" },
+          { name: "React.jsx", type: "file", language: "javascript" },
+          { name: "Tailwind.css", type: "file", language: "css" },
         ],
       },
       {
-        name: "Backend",
+        name: "explorer.backend",
         type: "folder",
         isOpen: true,
         children: [
-          {
-            name: "Python.py",
-            type: "file",
-            language: "python",
-          },
-          {
-            name: "PHP.php",
-            type: "file",
-            language: "php",
-          },
-          {
-            name: "Laravel.php",
-            type: "file",
-            language: "php",
-          },
-          {
-            name: "Express.js",
-            type: "file",
-            language: "javascript",
-          },
+          { name: "Python.py", type: "file", language: "python" },
+          { name: "PHP.php", type: "file", language: "php" },
+          { name: "Laravel.php", type: "file", language: "php" },
+          { name: "Express.js", type: "file", language: "javascript" },
         ],
       },
       {
-        name: "Base de données",
+        name: "explorer.database",
         type: "folder",
         isOpen: true,
         children: [
-          {
-            name: "MySQL.sql",
-            type: "file",
-            language: "sql",
-          },
-          {
-            name: "MongoDB.js",
-            type: "file",
-            language: "javascript",
-          },
+          { name: "MySQL.sql", type: "file", language: "sql" },
+          { name: "MongoDB.js", type: "file", language: "javascript" },
         ],
       },
       {
-        name: "Outils",
+        name: "explorer.tools",
         type: "folder",
         isOpen: true,
         children: [
-          {
-            name: "VSCode.code",
-            type: "file",
-            language: "code",
-          },
-          {
-            name: "Git.git",
-            type: "file",
-            language: "git",
-          },
-          {
-            name: "GitHub.md",
-            type: "file",
-            language: "markdown",
-          },
-          {
-            name: "Postman.json",
-            type: "file",
-            language: "json",
-          },
-          {
-            name: "Docker.yml",
-            type: "file",
-            language: "yaml",
-          },
-          {
-            name: "WordPress.php",
-            type: "file",
-            language: "php",
-          },
+          { name: "VSCode.code", type: "file", language: "code" },
+          { name: "Git.git", type: "file", language: "git" },
+          { name: "GitHub.md", type: "file", language: "markdown" },
+          { name: "Postman.json", type: "file", language: "json" },
+          { name: "Docker.yml", type: "file", language: "yaml" },
+          { name: "WordPress.php", type: "file", language: "php" },
         ],
       },
     ],
@@ -179,47 +103,57 @@ const skillsFiles = [
 
 const aboutFiles = [
   {
-    name: "À propos",
+    name: "explorer.about",
     type: "folder",
     isOpen: true,
     children: [
-      { name: "Profil.md", type: "file", language: "markdown" },
-      { name: "Expérience.json", type: "file", language: "json" },
-      { name: "Formation.md", type: "file", language: "markdown" },
       {
-        name: "Documents",
+        name: "explorer.profile",
+        type: "file",
+        language: "markdown",
+      },
+      {
+        name: "explorer.experience",
+        type: "file",
+        language: "json",
+      },
+      {
+        name: "explorer.education",
+        type: "file",
+        language: "markdown",
+      },
+      {
+        name: "explorer.documents",
         type: "folder",
-        children: [
-          { name: "CV.pdf", type: "file" },
-        ],
+        children: [{ name: "CV.pdf", type: "file" }],
       },
     ],
   },
 ];
 
-const HomeFiles = [
+const homeFiles = [
   {
-    name: "Accueil",
+    name: "explorer.home",
     type: "folder",
     isOpen: true,
     children: [
       {
-        name: "profil.js",
+        name: "explorer.profileFile",
         type: "file",
         language: "javascript",
       },
       {
-        name: "projets.js",
+        name: "explorer.projectsFile",
         type: "file",
         language: "javascript",
       },
       {
-        name: "compétences.js",
+        name: "explorer.skillsFile",
         type: "file",
         language: "javascript",
       },
       {
-        name: "principe.js",
+        name: "explorer.principleFile",
         type: "file",
         language: "javascript",
       },
@@ -229,17 +163,17 @@ const HomeFiles = [
 
 const contactFiles = [
   {
-    name: "Contact",
+    name: "explorer.contact",
     type: "folder",
     isOpen: true,
     children: [
       {
-        name: "FormulaireContact.jsx",
+        name: "explorer.contactForm",
         type: "file",
         language: "JavaScript",
       },
       {
-        name: "InformationsContact.json",
+        name: "explorer.contactInfo",
         type: "file",
         language: "json",
       },
@@ -250,7 +184,7 @@ const contactFiles = [
 export const getFileStructure = (path) => {
   switch (path) {
     case "/":
-      return HomeFiles;
+      return homeFiles;
     case "/projects":
       return projectFiles;
     case "/skills":
@@ -260,6 +194,6 @@ export const getFileStructure = (path) => {
     case "/contact":
       return contactFiles;
     default:
-      return HomeFiles;
+      return homeFiles;
   }
 };

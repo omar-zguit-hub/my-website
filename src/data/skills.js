@@ -19,7 +19,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 
 export const skills = [
   {
-    category: "Frontend",
+    category: "skills.categories.frontend",
     items: [
       { name: "HTML", level: 95, icon: FaHtml5 },
       { name: "CSS", level: 75, icon: FaCss3Alt },
@@ -32,7 +32,7 @@ export const skills = [
   },
 
   {
-    category: "Backend",
+    category: "skills.categories.backend",
     items: [
       { name: "Python", level: 60, icon: FaPython },
       { name: "PHP", level: 60, icon: FaPhp },
@@ -42,7 +42,7 @@ export const skills = [
   },
 
   {
-    category: "Base de données",
+    category: "skills.categories.database",
     items: [
       { name: "MySQL", level: 65, icon: SiMysql },
       { name: "MongoDB", level: 75, icon: DiMongodb },
@@ -50,7 +50,7 @@ export const skills = [
   },
 
   {
-    category: "Outils & plateformes",
+    category: "skills.categories.tools",
     items: [
       { name: "VS Code", level: 99, icon: VscVscode },
       { name: "Git", level: 95, icon: SiGit },
@@ -60,4 +60,4 @@ export const skills = [
       { name: "WordPress", level: 30, icon: FaWordpress },
     ],
   },
-];
+]; 

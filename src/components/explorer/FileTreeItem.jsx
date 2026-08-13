@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight,ChevronLeft } from "lucide-react";
 import FileIcon from "./FileIcon";
+import { useTranslation } from "react-i18next";
 
 const FileTreeItem = ({ item, level, onSelect, onToggle, selectedFile }) => {
   const isSelected = selectedFile?.name === item.name;
+  const { t,i18n } = useTranslation();
 
   return (
     <div>
@@ -22,15 +24,16 @@ const FileTreeItem = ({ item, level, onSelect, onToggle, selectedFile }) => {
           <>
             {item.isOpen ? (
               <ChevronDown size={16} className="mr-1" />
-            ) : (
-              <ChevronRight size={16} className="mr-1" />
+            ) : ( 
+              i18n.language === "fr" ? <ChevronRight size={16} className="mr-1" />:<ChevronLeft size={16} className="mr-1" />
+              
             )}
           </>
         )}
 
         <FileIcon type={item.type} name={item.name} isOpen={item.isOpen} />
 
-        <span className="ml-1">{item.name}</span>
+        <span className="ml-1 mr-1">{t(item.name)}</span>
       </motion.div>
 
       {item.type === "folder" && item.isOpen && item.children && (

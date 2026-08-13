@@ -1,0 +1,204 @@
+{
+  "home": {
+    "cards": {
+      "profile": "profil.js",
+      "projects": "projets.js",
+      "skills": "compétences.js",
+      "principle": "principe.js"
+    },
+
+    "profile": { 
+      "name": "Omar Zguit", 
+      "field": "Développeur Fullstack Junior",
+      "city": "Tinghir - Drâa-Tafilalet", 
+      "comment": "Toujours apprendre. Toujours construire."
+    },
+
+    "principle": {
+      "title": "DRY",
+      "text": "Don't Repeat Yourself"
+    }
+  },
+
+  "explorer": {
+    "title": "Explorateur",
+    "language": "Langue",
+    "french": "Français",
+    "arabic": "Arabe",
+    
+    "projects": "Projets",
+    "skills": "Compétences",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Base de données",
+    "tools": "Outils",
+    "about": "À propos",
+    "profile": "Profil",
+    "experience": "Expérience",
+    "education": "Formation",
+    "documents": "Documents",
+    "home": "Accueil",
+    "profileFile": "profil.js",
+    "projectsFile": "projets.js",
+    "skillsFile": "compétences.js",
+    "principleFile": "principe.js",
+    "contact": "Contact",
+    "contactForm": "Formulaire de contact",
+    "contactInfo": "Informations de contact",
+    "assets":"Images"
+  },
+
+  "projects": {
+    "code": "Code",
+    "liveDemo": "Démo en ligne",
+    "housTalib": {
+      "title": "HousTalib : Plateforme de logement étudiant",
+      "description": "Une plateforme web full-stack qui met en relation les étudiants et les propriétaires afin de faciliter la recherche et la location de logements étudiants."
+    },
+
+    "mayaSol": {
+      "title": "MAYASOL : Plateforme E-Commerce",
+      "description": "Une application e-commerce full-stack permettant de consulter les produits, gérer le panier, passer des commandes et gérer les produits via une interface d'administration."
+    },
+
+    "todoList": {
+      "title": "Application Liste de tâches",
+      "description": "Une application de gestion des tâches permettant aux utilisateurs de créer, organiser, modifier, terminer et gérer leurs tâches quotidiennes grâce à une interface simple."
+    },
+
+    "weather": {
+      "title": "Application Météo",
+      "description": "Une application météo responsive permettant aux utilisateurs de rechercher des villes et de consulter les conditions météorologiques actuelles grâce à une API météo."
+    },
+
+    "ticTacToe": {
+      "title": "Jeu Tic-Tac-Toe",
+      "description": "Un jeu classique de Tic-Tac-Toe développé avec React, avec un gameplay interactif, une gestion de l'état du jeu et une interface utilisateur responsive."
+    }
+  },
+
+  "projectDetails": {
+    "title": "Détails du projet",
+    "back": "Retour",
+    "backToProjects": "Retour aux projets",
+    "notFound": "Projet introuvable",
+    "screenshot": "capture",
+    "previousImage": "Image précédente",
+    "nextImage": "Image suivante",
+    "about": "À propos du projet",
+    "technologies": "Technologies utilisées"
+  },
+
+  "skills": {
+    "title": "Compétences",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de données",
+      "tools": "Outils & plateformes"
+    }
+  },
+
+  "about": {
+    "name": "Omar Zguit",
+    "role": "Développeur Full-Stack Junior",
+    "location": "Maroc, Tinghir",
+    "downloadCV": "Télécharger le CV",
+
+    "aboutMe": {
+      "title": "À propos de moi",
+      "description": "Je suis un développeur Full-Stack junior, titulaire d’un diplôme en Développement Digital de la formation professionnelle. Je possède des connaissances et des compétences pratiques qui me permettent de développer des applications web complètes, de l’interface frontend au backend. Je continue à apprendre et à développer mes compétences, en gardant à l’esprit que ce domaine évolue rapidement et que les outils et les technologies changent constamment, tandis que les bases et les principes de la programmation restent essentiels. Je m’efforce donc de maîtriser les fondamentaux et de construire une base solide qui me permet de m’adapter aux différentes technologies et outils, au fur et à mesure de leur évolution."
+    },
+
+    "experience": {
+      "title": "Expérience",
+
+      "fullstack": {
+        "title": "Développeur Full-Stack Junior",
+        "subtitle": "Projets personnels & développement",
+        "description": "Développement d'applications web full-stack et acquisition d'une expérience pratique avec React, Laravel et MySQL."
+      },
+
+      "web": {
+        "title": "Développement Web",
+        "subtitle": "Apprentissage & développement",
+        "description": "Création d'interfaces responsives, travail avec des API et des bases de données, utilisation de Git et GitHub pour le contrôle de version, et découverte des outils et pratiques modernes de développement."
+      }
+    },
+
+    "education": {
+      "title": "Formation",
+
+      "digital": {
+        "title": "Développement Digital",
+        "badge": "Diplôme",
+        "subtitle": "OFPPT — Développement Digital",
+        "description": "J’ai obtenu un diplôme professionnel en Développement Digital auprès de l’OFPPT, avec une formation en développement Frontend et Backend. Durant ma formation, j’ai réalisé plusieurs",
+        "descriptionMiddle": "éducatifs qui m’ont permis de mettre en pratique mes connaissances et mes",
+        "descriptionEnd": "en développement web."
+      },
+
+      "selfLearning": {
+        "title": "Autoformation",
+        "subtitle": "Apprentissage continu & exploration",
+        "description": "Apprentissage continu et exploration du Développement Digital, de l'Intelligence Artificielle, des technologies modernes et de nouveaux outils de développement afin d'élargir mes connaissances et de rester à jour dans l'évolution de l'écosystème technologique."
+      }
+    },
+
+    "links": {
+      "skills": "compétences",
+      "projects": "projets"
+    }
+  },
+
+  "contact": {
+    "title": "Me contacter",
+    "description": "Je suis toujours intéressé par de nouveaux projets, opportunités et idées. N'hésitez pas à me contacter en utilisant le formulaire ci-dessous.",
+
+    "information": {
+      "title": "Informations de contact",
+
+      "email": {
+        "label": "Email"
+      },
+
+      "phone": {
+        "label": "Téléphone"
+      },
+
+      "location": {
+        "label": "Localisation",
+        "value": "Maroc, Tinghir"
+      }
+    },
+
+    "form": {
+      "title": "Envoyer un message",
+
+      "name": {
+        "label": "Nom",
+        "placeholder": "Votre nom"
+      },
+
+      "email": {
+        "label": "Email",
+        "placeholder": "votre@email.com"
+      },
+
+      "message": {
+        "label": "Message",
+        "placeholder": "Écrivez votre message..."
+      },
+
+      "submit": "Envoyer le message"
+    }
+  },
+
+  "footer": {
+    "branch": "main",
+    "status": "Disponible",
+    "name": "Omar Zguit",
+    "country": "Maroc",
+    "copyright": "© 2026"
+  }
+}

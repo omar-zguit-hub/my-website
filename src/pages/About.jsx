@@ -2,21 +2,25 @@ import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import { CiMail, CiLocationOn } from "react-icons/ci";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import profile from "../assets/profile.png";
 import CV from "../assets/CV_Omar_Zguit.pdf";
 
 function About() {
+  const { t, i18n } = useTranslation();
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
+      initial={{ opacity: 0, x: i18n.language === "fr" ? -20 : 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
       className="w-full max-w-5xl mx-auto overflow-hidden p-2"
     >
-      {/* ================= En-tête du profil ================= */}
+      {/* ================= Profile Header ================= */}
       <div className="p-6 border-b border-gray-700">
         <div className="flex flex-col md:flex-row md:items-center gap-6">
-          {/* Photo de profil */}
+          {/* Profile Photo */}
           <div className="flex justify-center md:justify-start shrink-0">
             <img
               src={profile}
@@ -25,23 +29,23 @@ function About() {
             />
           </div>
 
-          {/* Nom + Localisation */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-3xl font-bold text-white">Omar Zguit</h1>
+          {/* Name + Location */}
+          <div
+            className={`flex-1 text-center ${i18n.language === "fr" ? "md:text-left" : "md:text-right"}`}
+          >
+            <h1 className="text-3xl font-bold text-white">{t("about.name")}</h1>
 
-            <p className="text-blue-400 font-medium mt-1">
-              Développeur Full-Stack Junior
-            </p>
+            <p className="text-blue-400 font-medium mt-1">{t("about.role")}</p>
 
             <div className="flex items-center justify-center md:justify-start gap-1 mt-2 text-gray-400">
               <CiLocationOn size={20} />
-              <span>Maroc, Tinghir</span>
+              <span>{t("about.location")}</span>
             </div>
           </div>
 
-          {/* Réseaux sociaux + CV */}
+          {/* Social Media + CV */}
           <div className="flex flex-col items-center md:items-end gap-3 m-3">
-            {/* Réseaux sociaux */}
+            {/* Social Media */}
             <div className="flex gap-2">
               {/* GitHub */}
               <a
@@ -75,138 +79,129 @@ function About() {
               </a>
             </div>
 
-            {/* Télécharger le CV */}
+            {/* Download CV */}
             <a
               href={CV}
               download="CV-Omar-Zguit.pdf"
               className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition"
             >
               <FaDownload size={14} />
-              Télécharger le CV
+              {t("about.downloadCV")}
             </a>
           </div>
         </div>
       </div>
 
-      {/* ================= À propos de moi ================= */}
+      {/* ================= About Me ================= */}
       <section className="p-6">
-        <h2 className="text-2xl font-bold text-white mb-4">À propos de moi</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">
+          {t("about.aboutMe.title")}
+        </h2>
 
         <p className="text-gray-300 leading-7 max-w-3xl">
-          Je suis un développeur Full-Stack Junior titulaire d'un diplôme de
-          l'OFPPT. J'ai des connaissances et des compétences pratiques qui me
-          permettent de créer des applications web, du Frontend au Backend. Je
-          continue à apprendre et à améliorer mes compétences, car le
-          développement web évolue constamment avec l'apparition de nouvelles
-          technologies et de nouveaux outils. Je me concentre sur la maîtrise
-          des concepts fondamentaux tout en découvrant les technologies modernes
-          à travers des projets pratiques.
+          {t("about.aboutMe.description")}
         </p>
       </section>
 
-      {/* ================= Expérience ================= */}
+      {/* ================= Experience ================= */}
       <section className="px-6 pb-6">
-        <h2 className="text-2xl font-bold text-white mb-5">Expérience</h2>
+        <h2 className="text-2xl font-bold text-white mb-5">
+          {t("about.experience.title")}
+        </h2>
 
         <div className="space-y-6">
-          {/* Expérience 1 */}
+          {/* Experience 1 */}
           <div className="border-l-2 border-blue-500 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Développeur Full-Stack Junior
+                {t("about.experience.fullstack.title")}
               </h3>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              Projets personnels & développement
+              {t("about.experience.fullstack.subtitle")}
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Développement d'applications web full-stack et acquisition d'une
-              expérience pratique avec React, Laravel et MySQL.
+              {t("about.experience.fullstack.description")}
             </p>
           </div>
 
-          {/* Expérience 2 */}
+          {/* Experience 2 */}
           <div className="border-l-2 border-gray-600 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Développement Web
+                {t("about.experience.web.title")}
               </h3>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              Apprentissage & développement
+              {t("about.experience.web.subtitle")}
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Création d'interfaces responsives, travail avec des API et des
-              bases de données, utilisation de Git et GitHub pour le contrôle de
-              version, et découverte des outils et pratiques modernes de
-              développement.
+              {t("about.experience.web.description")}
             </p>
           </div>
         </div>
       </section>
 
-      {/* ================= Formation ================= */}
+      {/* ================= Education ================= */}
       <section className="px-6 pb-6">
-        <h2 className="text-2xl font-bold text-white mb-5">Formation</h2>
+        <h2 className="text-2xl font-bold text-white mb-5">
+          {t("about.education.title")}
+        </h2>
 
         <div className="space-y-6">
-          {/* Formation 1 */}
+          {/* Education 1 */}
           <div className="border-l-2 border-blue-500 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Développement Digital
+                {t("about.education.digital.title")}
               </h3>
 
-              <span className="text-sm text-gray-500">Diplôme</span>
+              <span className="text-sm text-gray-500">
+                {t("about.education.digital.badge")}
+              </span>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              OFPPT — Développement Digital
+              {t("about.education.digital.subtitle")}
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Obtention d'un diplôme professionnel en Développement Digital,
-              avec une formation en développement Frontend et Backend.
-              Développement de{" "}
-              <Link
-                to="/skills"
-                className="text-blue-400 hover:text-blue-300 transition"
-              >
-                compétences
-              </Link>{" "}
-              pratiques permettant de réaliser différents{" "}
+              {t("about.education.digital.description")}{" "}
               <Link
                 to="/projects"
                 className="text-blue-400 hover:text-blue-300 transition"
               >
-                projets
+                {t("about.links.projects")}
               </Link>{" "}
-              durant ma formation.
+              {t("about.education.digital.descriptionMiddle")}{" "}
+              <Link
+                to="/skills"
+                className="text-blue-400 hover:text-blue-300 transition"
+              >
+                {t("about.links.skills")}
+              </Link>{" "}
+              {t("about.education.digital.descriptionEnd")}
             </p>
           </div>
 
-          {/* Formation 2 */}
+          {/* Education 2 */}
           <div className="border-l-2 border-gray-600 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Autoformation
+                {t("about.education.selfLearning.title")}
               </h3>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              Apprentissage continu & exploration
+              {t("about.education.selfLearning.subtitle")}
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Apprentissage continu et exploration du Développement Digital, de
-              l'Intelligence Artificielle, des technologies modernes et de
-              nouveaux outils de développement afin d'élargir mes connaissances
-              et de rester à jour dans l'évolution de l'écosystème
-              technologique.
+              {t("about.education.selfLearning.description")}
             </p>
           </div>
         </div>

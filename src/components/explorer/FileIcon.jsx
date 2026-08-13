@@ -20,7 +20,7 @@ const FileIcon = ({ type, name, isOpen }) => {
     return isOpen ? (
       <FolderOpen size={16} className="text-yellow-400" />
     ) : (
-      <Folder size={16} className="text-yellow-400" />
+      <Folder size={16} className="text-yellow-400 " />
     );
   }
 
