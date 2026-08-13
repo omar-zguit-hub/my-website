@@ -26,7 +26,7 @@ import todo2 from "../assets/ToDoList/todo2.png";
 import todo3 from "../assets/ToDoList/todo3.png";
 import todo4 from "../assets/ToDoList/todo4.png";
 import todo5 from "../assets/ToDoList/todo5.png";
-import todo6 from "../assets/ToDoList/todo6.png";
+import todo6 from "../assets/ToDoList/todo6.png"; 
 
 import tic1 from "../assets/TicTacToe/tic1.png";
 import tic2 from "../assets/TicTacToe/tic2.png";

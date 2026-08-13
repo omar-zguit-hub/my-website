@@ -57,51 +57,51 @@ function ProjectDetails() {
         </div>
 
         {/* Image Gallery */}
-        <section className="relative z-0 mb-8 overflow-hidden rounded-xl border border-gray-800 bg-[#252526]">
+        <section className="relative z-0 mx-auto mb-6 w-full max-w-4xl overflow-hidden rounded-xl border border-gray-800 bg-[#252526]">
           <motion.div
             key={currentImage}
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3 }}
-            className="relative z-0 w-full"
+            className="relative z-0 flex h-[250px] w-full items-center justify-center sm:h-[350px] md:h-[450px]"
           >
             <img
               src={images[currentImage]}
               alt={`${project.title} screenshot ${currentImage + 1}`}
-              className="block h-auto max-h-[600px] w-full object-contain"
+              className="block h-full w-full object-contain"
             />
+
+            {/* Previous */}
+            {images.length > 1 && (
+              <button
+                type="button"
+                onClick={previousImage}
+                aria-label="Previous image"
+                className="absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black"
+              >
+                <FiChevronLeft size={22} />
+              </button>
+            )}
+
+            {/* Next */}
+            {images.length > 1 && (
+              <button
+                type="button"
+                onClick={nextImage}
+                aria-label="Next image"
+                className="absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black"
+              >
+                <FiChevronRight size={22} />
+              </button>
+            )}
+
+            {/* Counter */}
+            {images.length > 1 && (
+              <div className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-black/70 px-3 py-1 text-xs text-gray-200 backdrop-blur-sm">
+                {currentImage + 1} / {images.length}
+              </div>
+            )}
           </motion.div>
-
-          {/* Previous */}
-          {images.length > 1 && (
-            <button
-              type="button"
-              onClick={previousImage}
-              aria-label="Previous image"
-              className="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black"
-            >
-              <FiChevronLeft size={24} />
-            </button>
-          )}
-
-          {/* Next */}
-          {images.length > 1 && (
-            <button
-              type="button"
-              onClick={nextImage}
-              aria-label="Next image"
-              className="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black"
-            >
-              <FiChevronRight size={24} />
-            </button>
-          )}
-
-          {/* Counter */}
-          {images.length > 1 && (
-            <div className="absolute bottom-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-black/70 px-3 py-1 text-xs text-gray-200 backdrop-blur-sm">
-              {currentImage + 1} / {images.length}
-            </div>
-          )}
         </section>
 
         {/* Project Information */}
