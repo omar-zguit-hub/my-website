@@ -12,9 +12,9 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Form submitted:", formData);
+    console.log("Formulaire envoyé :", formData);
 
-    // Reset form
+    // Réinitialiser le formulaire
     setFormData({
       name: "",
       email: "",
@@ -36,37 +36,38 @@ function Contact() {
       transition={{ duration: 0.5 }}
       className="max-w-5xl mx-auto p-6"
     >
-      {/* Header */}
+      {/* En-tête */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-2xl font-bold mb-6"
       >
-        Get in Touch
+        Me contacter
       </motion.h2>
 
-      {/* Intro */}
+      {/* Introduction */}
       <motion.p
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
         className="text-gray-300 leading-7 mb-8 max-w-2xl"
       >
-        I'm always interested in hearing about new projects, opportunities, and
-        ideas. Feel free to reach out using the contact form below.
+        Je suis toujours intéressé par de nouveaux projets, opportunités et
+        idées. N'hésitez pas à me contacter en utilisant le formulaire
+        ci-dessous.
       </motion.p>
 
-      {/* Content */}
+      {/* Contenu */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Contact Information */}
-        <motion.div 
+        {/* Informations de contact */}
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
           className="bg-gray-800/60 border border-gray-700 rounded-xl p-6"
         >
           <h3 className="text-xl font-semibold text-white mb-6">
-            Contact Information
+            Informations de contact
           </h3>
 
           <div className="space-y-5">
@@ -85,7 +86,7 @@ function Contact() {
               </div>
             </a>
 
-            {/* Phone */}
+            {/* Téléphone */}
             <a
               href="tel:+212640790784"
               className="flex items-center gap-4 text-gray-300 hover:text-blue-400 transition"
@@ -95,26 +96,26 @@ function Contact() {
               </div>
 
               <div>
-                <p className="text-sm text-gray-500">Phone</p>
+                <p className="text-sm text-gray-500">Téléphone</p>
                 <p>+212 6 40 79 07 84</p>
               </div>
             </a>
 
-            {/* Location */}
+            {/* Localisation */}
             <div className="flex items-center gap-4 text-gray-300">
               <div className="p-3 bg-gray-700 rounded-lg">
                 <MapPin size={20} />
               </div>
 
               <div>
-                <p className="text-sm text-gray-500">Location</p>
-                <p>Morocco, Tinghir</p>
+                <p className="text-sm text-gray-500">Localisation</p>
+                <p>Maroc, Tinghir</p>
               </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Contact Form */}
+        {/* Formulaire de contact */}
         <motion.form
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -123,16 +124,16 @@ function Contact() {
           className="bg-gray-800/60 border border-gray-700 rounded-xl p-6 space-y-5"
         >
           <h3 className="text-xl font-semibold text-white mb-4">
-            Send Me a Message
+            Envoyer un message
           </h3>
 
-          {/* Name */}
+          {/* Nom */}
           <div>
             <label
               htmlFor="name"
               className="block text-sm font-medium text-gray-300 mb-2"
             >
-              Name
+              Nom
             </label>
 
             <input
@@ -141,7 +142,7 @@ function Contact() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your name"
+              placeholder="Votre nom"
               className="w-full px-3 py-2 bg-gray-700 text-white placeholder-gray-500 rounded-md border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
               required
             />
@@ -162,7 +163,7 @@ function Contact() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="your@email.com"
+              placeholder="votre@email.com"
               className="w-full px-3 py-2 bg-gray-700 text-white placeholder-gray-500 rounded-md border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
               required
             />
@@ -182,14 +183,14 @@ function Contact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Write your message..."
+              placeholder="Écrivez votre message..."
               rows={5}
               className="w-full px-3 py-2 bg-gray-700 text-white placeholder-gray-500 rounded-md border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none resize-none"
               required
             />
           </div>
 
-          {/* Submit */}
+          {/* Envoyer */}
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -197,7 +198,7 @@ function Contact() {
             className="w-full flex items-center justify-center px-4 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <Send className="mr-2" size={18} />
-            Send Message
+            Envoyer le message
           </motion.button>
         </motion.form>
       </div>

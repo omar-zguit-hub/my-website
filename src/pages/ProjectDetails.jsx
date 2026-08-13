@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "motion/react";
 
 import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 import { FiChevronLeft, FiChevronRight, FiArrowLeft } from "react-icons/fi";
 
@@ -77,7 +78,7 @@ function ProjectDetails() {
                 type="button"
                 onClick={previousImage}
                 aria-label="Previous image"
-                className="absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black"
+                className="absolute left-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black cursor-pointer"
               >
                 <FiChevronLeft size={22} />
               </button>
@@ -89,7 +90,7 @@ function ProjectDetails() {
                 type="button"
                 onClick={nextImage}
                 aria-label="Next image"
-                className="absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black"
+                className="absolute right-3 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-110 hover:bg-black cursor-pointer"
               >
                 <FiChevronRight size={22} />
               </button>
@@ -157,6 +158,7 @@ function ProjectDetails() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-lg border border-gray-700 px-4 py-2.5 text-sm font-medium text-gray-300 transition hover:border-gray-500 hover:text-white"
             >
+                <FiExternalLink size={18} />
               Live Demo
             </a>
           )}

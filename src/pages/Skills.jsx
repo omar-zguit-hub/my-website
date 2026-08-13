@@ -9,7 +9,7 @@ function Skills() {
         animate={{ opacity: 1, y: 0 }}
         className="text-2xl font-bold mb-6"
       >
-        Skills & Expritse
+        Compétences
       </motion.h2>
 
       {skills.map((skill, index) => (

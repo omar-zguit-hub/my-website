@@ -1,6 +1,6 @@
 const projectFiles = [
   {
-    name: "Projects",
+    name: "Projets",
     type: "folder",
     isOpen: true,
     children: [
@@ -15,8 +15,7 @@ const projectFiles = [
         language: "javascript",
       },
       {
-        name:
-         "TaskManager.jsx",
+        name: "TaskManager.jsx",
         type: "file",
         language: "JavaScript",
       },
@@ -47,7 +46,7 @@ const projectFiles = [
 
 const skillsFiles = [
   {
-    name: "Skills",
+    name: "Compétences",
     type: "folder",
     isOpen: true,
     children: [
@@ -121,7 +120,7 @@ const skillsFiles = [
         ],
       },
       {
-        name: "Database",
+        name: "Base de données",
         type: "folder",
         isOpen: true,
         children: [
@@ -138,7 +137,7 @@ const skillsFiles = [
         ],
       },
       {
-        name: "Tools",
+        name: "Outils",
         type: "folder",
         isOpen: true,
         children: [
@@ -180,13 +179,13 @@ const skillsFiles = [
 
 const aboutFiles = [
   {
-    name: "About",
+    name: "À propos",
     type: "folder",
     isOpen: true,
     children: [
-      { name: "Profile.md", type: "file", language: "markdown" },
-      { name: "Experience.json", type: "file", language: "json" },
-      { name: "Education.md", type: "file", language: "markdown" },
+      { name: "Profil.md", type: "file", language: "markdown" },
+      { name: "Expérience.json", type: "file", language: "json" },
+      { name: "Formation.md", type: "file", language: "markdown" },
       {
         name: "Documents",
         type: "folder",
@@ -200,27 +199,27 @@ const aboutFiles = [
 
 const HomeFiles = [
   {
-    name: "Home",
+    name: "Accueil",
     type: "folder",
     isOpen: true,
     children: [
       {
-        name: "profile.js",
+        name: "profil.js",
         type: "file",
         language: "javascript",
       },
       {
-        name: "projects.js",
+        name: "projets.js",
         type: "file",
         language: "javascript",
       },
       {
-        name: "skills.js",
+        name: "compétences.js",
         type: "file",
         language: "javascript",
       },
       {
-        name: "DRY.js",
+        name: "principe.js",
         type: "file",
         language: "javascript",
       },
@@ -235,12 +234,12 @@ const contactFiles = [
     isOpen: true,
     children: [
       {
-        name: "ContactForm.jsx",
+        name: "FormulaireContact.jsx",
         type: "file",
         language: "JavaScript",
-      }, 
+      },
       {
-        name: "ContactInfo.json",
+        name: "InformationsContact.json",
         type: "file",
         language: "json",
       },

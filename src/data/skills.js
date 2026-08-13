@@ -11,11 +11,10 @@ import {
   FaDocker,
   FaWordpress,
 } from "react-icons/fa";
-import { VscVscode } from "react-icons/vsc";
 
+import { VscVscode } from "react-icons/vsc";
 import { SiMui, SiMysql, SiGit, SiGithub, SiPostman } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
-
 import { RiTailwindCssFill } from "react-icons/ri";
 
 export const skills = [
@@ -43,7 +42,7 @@ export const skills = [
   },
 
   {
-    category: "Database",
+    category: "Base de données",
     items: [
       { name: "MySQL", level: 65, icon: SiMysql },
       { name: "MongoDB", level: 75, icon: DiMongodb },
@@ -51,7 +50,7 @@ export const skills = [
   },
 
   {
-    category: "Tools & Platforms",
+    category: "Outils & plateformes",
     items: [
       { name: "VS Code", level: 99, icon: VscVscode },
       { name: "Git", level: 95, icon: SiGit },

@@ -13,11 +13,10 @@ function About() {
       transition={{ duration: 0.5 }}
       className="w-full max-w-5xl mx-auto overflow-hidden p-2"
     >
-      {/* ================= Profile Header ================= */}
+      {/* ================= En-tête du profil ================= */}
       <div className="p-6 border-b border-gray-700">
         <div className="flex flex-col md:flex-row md:items-center gap-6">
-          
-          {/* Profile Photo */}
+          {/* Photo de profil */}
           <div className="flex justify-center md:justify-start shrink-0">
             <img
               src={profile}
@@ -26,26 +25,23 @@ function About() {
             />
           </div>
 
-          {/* Name + Location */}
+          {/* Nom + Localisation */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-3xl font-bold text-white">
-              Omar Zguit
-            </h1>
+            <h1 className="text-3xl font-bold text-white">Omar Zguit</h1>
 
             <p className="text-blue-400 font-medium mt-1">
-              Junior Full-Stack Developer
+              Développeur Full-Stack Junior
             </p>
 
             <div className="flex items-center justify-center md:justify-start gap-1 mt-2 text-gray-400">
               <CiLocationOn size={20} />
-              <span>Morocco, Tinghir</span>
+              <span>Maroc, Tinghir</span>
             </div>
           </div>
 
-          {/* Social Links + CV */}
+          {/* Réseaux sociaux + CV */}
           <div className="flex flex-col items-center md:items-end gap-3 m-3">
-            
-            {/* Social Links */}
+            {/* Réseaux sociaux */}
             <div className="flex gap-2">
               {/* GitHub */}
               <a
@@ -79,144 +75,138 @@ function About() {
               </a>
             </div>
 
-            {/* Download CV */}
+            {/* Télécharger le CV */}
             <a
               href={CV}
               download="CV-Omar-Zguit.pdf"
               className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition"
             >
               <FaDownload size={14} />
-              Download CV
+              Télécharger le CV
             </a>
           </div>
         </div>
       </div>
 
-      {/* ================= About Me ================= */}
+      {/* ================= À propos de moi ================= */}
       <section className="p-6">
-        <h2 className="text-2xl font-bold text-white mb-4">
-          About Me
-        </h2>
+        <h2 className="text-2xl font-bold text-white mb-4">À propos de moi</h2>
 
         <p className="text-gray-300 leading-7 max-w-3xl">
-          I'm a Junior Full-Stack Developer with a diploma from OFPPT.
-          I have practical knowledge and skills that allow me to build
-          web applications from Frontend to Backend. I'm still learning
-          and improving my skills because web development is constantly
-          changing, with new technologies and tools appearing all the
-          time. I focus on building a strong foundation in core concepts
-          while learning modern technologies and improving my skills
-          through practical projects.
+          Je suis un développeur Full-Stack Junior titulaire d'un diplôme de
+          l'OFPPT. J'ai des connaissances et des compétences pratiques qui me
+          permettent de créer des applications web, du Frontend au Backend. Je
+          continue à apprendre et à améliorer mes compétences, car le
+          développement web évolue constamment avec l'apparition de nouvelles
+          technologies et de nouveaux outils. Je me concentre sur la maîtrise
+          des concepts fondamentaux tout en découvrant les technologies modernes
+          à travers des projets pratiques.
         </p>
       </section>
 
-      {/* ================= Experience ================= */}
+      {/* ================= Expérience ================= */}
       <section className="px-6 pb-6">
-        <h2 className="text-2xl font-bold text-white mb-5">
-          Experience
-        </h2>
+        <h2 className="text-2xl font-bold text-white mb-5">Expérience</h2>
 
         <div className="space-y-6">
-          {/* Experience 1 */}
+          {/* Expérience 1 */}
           <div className="border-l-2 border-blue-500 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Junior Full-Stack Developer
-              </h3> 
+                Développeur Full-Stack Junior
+              </h3>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              Personal Projects & Development
+              Projets personnels & développement
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Building full-stack web applications and developing
-              practical experience with React, Laravel and MySQL.
+              Développement d'applications web full-stack et acquisition d'une
+              expérience pratique avec React, Laravel et MySQL.
             </p>
           </div>
 
-          {/* Experience 2 */}
+          {/* Expérience 2 */}
           <div className="border-l-2 border-gray-600 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Web Development
-              </h3> 
+                Développement Web
+              </h3>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              Learning & Building
+              Apprentissage & développement
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Creating responsive interfaces, working with APIs and
-              databases, using Git and GitHub for version control, and
-              exploring modern development tools and practices.
+              Création d'interfaces responsives, travail avec des API et des
+              bases de données, utilisation de Git et GitHub pour le contrôle de
+              version, et découverte des outils et pratiques modernes de
+              développement.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ================= Education ================= */}
+      {/* ================= Formation ================= */}
       <section className="px-6 pb-6">
-        <h2 className="text-2xl font-bold text-white mb-5">
-          Education
-        </h2>
+        <h2 className="text-2xl font-bold text-white mb-5">Formation</h2>
 
         <div className="space-y-6">
-          {/* Education 1 */}
+          {/* Formation 1 */}
           <div className="border-l-2 border-blue-500 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Digital Development
+                Développement Digital
               </h3>
 
-              <span className="text-sm text-gray-500">
-                Diploma
-              </span>
+              <span className="text-sm text-gray-500">Diplôme</span>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              OFPPT — Digital Development
+              OFPPT — Développement Digital
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Earned a professional diploma in Digital Development,
-              with training in front-end and back-end development.
-              Developed practical{" "}
+              Obtention d'un diplôme professionnel en Développement Digital,
+              avec une formation en développement Frontend et Backend.
+              Développement de{" "}
               <Link
                 to="/skills"
                 className="text-blue-400 hover:text-blue-300 transition"
               >
-                skills
+                compétences
               </Link>{" "}
-              that allowed me to build and work on various{" "}
+              pratiques permettant de réaliser différents{" "}
               <Link
                 to="/projects"
                 className="text-blue-400 hover:text-blue-300 transition"
               >
-                projects
+                projets
               </Link>{" "}
-              throughout my training.
+              durant ma formation.
             </p>
           </div>
 
-          {/* Education 2 */}
+          {/* Formation 2 */}
           <div className="border-l-2 border-gray-600 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
               <h3 className="text-lg font-semibold text-white">
-                Self-Learning
-              </h3> 
+                Autoformation
+              </h3>
             </div>
 
             <p className="text-blue-400 text-sm mt-1">
-              Continuous Learning & Exploration
+              Apprentissage continu & exploration
             </p>
 
             <p className="text-gray-300 mt-3 leading-6">
-              Continuously learning and exploring Digital Development,
-              Artificial Intelligence, modern technologies, and new
-              development tools to expand my knowledge and stay up to
-              date with the evolving tech ecosystem.
+              Apprentissage continu et exploration du Développement Digital, de
+              l'Intelligence Artificielle, des technologies modernes et de
+              nouveaux outils de développement afin d'élargir mes connaissances
+              et de rester à jour dans l'évolution de l'écosystème
+              technologique.
             </p>
           </div>
         </div>

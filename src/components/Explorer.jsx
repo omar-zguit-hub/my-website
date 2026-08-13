@@ -55,7 +55,7 @@ const Explorer = () => {
     >
       <div className="p-2">
         <div className="text-sm uppercase tracking-wide text-gray-400 mb-2">
-          Explorer
+          Explorateur
         </div>
 
         <div className="space-y-1">

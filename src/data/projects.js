@@ -26,19 +26,18 @@ import todo2 from "../assets/ToDoList/todo2.png";
 import todo3 from "../assets/ToDoList/todo3.png";
 import todo4 from "../assets/ToDoList/todo4.png";
 import todo5 from "../assets/ToDoList/todo5.png";
-import todo6 from "../assets/ToDoList/todo6.png"; 
+import todo6 from "../assets/ToDoList/todo6.png";
 
 import tic1 from "../assets/TicTacToe/tic1.png";
 import tic2 from "../assets/TicTacToe/tic2.png";
-import tic3 from "../assets/TicTacToe/tic3.png"; 
-
+import tic3 from "../assets/TicTacToe/tic3.png";
 
 export const projects = [
   {
     id: 1,
-    title: "HousTalib : Student Housing Platform",
+    title: "HousTalib : Plateforme de logement étudiant",
     description:
-      "A full-stack web platform that connects students with property owners to simplify the search and rental of student accommodation.",
+      "Une plateforme web full-stack qui met en relation les étudiants et les propriétaires afin de faciliter la recherche et la location de logements étudiants.",
     technologies: [
       "React",
       "Redux Toolkit",
@@ -54,9 +53,9 @@ export const projects = [
 
   {
     id: 2,
-    title: "MAYASOL : E-Commerce Platform",
+    title: "MAYASOL : Plateforme E-Commerce",
     description:
-      "A full-stack e-commerce application for browsing products, managing a shopping cart, placing orders, and managing products through an administration interface.",
+      "Une application e-commerce full-stack permettant de consulter les produits, gérer le panier, passer des commandes et gérer les produits via une interface d'administration.",
     technologies: [
       "React",
       "Redux Toolkit",
@@ -73,21 +72,21 @@ export const projects = [
 
   {
     id: 3,
-    title: "To-Do List Application",
+    title: "Application Liste de tâches",
     description:
-      "A task management application that allows users to create, organize, update, complete, and manage their daily tasks through a simple interface.",
+      "Une application de gestion des tâches permettant aux utilisateurs de créer, organiser, modifier, terminer et gérer leurs tâches quotidiennes grâce à une interface simple.",
     technologies: ["React", "Material UI"],
     githubUrl: "https://github.com/omar-zguit-hub/React-todolist",
     liveUrl: "https://mytaskifyplanner.netlify.app/",
     image: ToDoList,
-    images: [todo1, todo2, todo3, todo4, todo5,todo6],
+    images: [todo1, todo2, todo3, todo4, todo5, todo6],
   },
 
   {
-    id:4,
-    title: "Weather Application",
+    id: 4,
+    title: "Application Météo",
     description:
-      "A responsive weather application that allows users to search for cities and view current weather conditions using data from a weather API.",
+      "Une application météo responsive permettant aux utilisateurs de rechercher des villes et de consulter les conditions météorologiques actuelles grâce à une API météo.",
     technologies: ["React", "Material UI", "OpenWeatherMap API"],
     githubUrl: "https://github.com/omar-zguit-hub/Weather-Now",
     liveUrl: "https://weatherscopenow.netlify.app/",
@@ -97,9 +96,9 @@ export const projects = [
 
   {
     id: 5,
-    title: "Tic-Tac-Toe Game",
+    title: "Jeu Tic-Tac-Toe",
     description:
-      "A classic Tic-Tac-Toe game built with React, featuring interactive gameplay, game state management, and a responsive user interface.",
+      "Un jeu classique de Tic-Tac-Toe développé avec React, avec un gameplay interactif, une gestion de l'état du jeu et une interface utilisateur responsive.",
     technologies: ["React", "Material UI"],
     githubUrl: "https://github.com/omar-zguit-hub/Tic-Tac-Toe",
     liveUrl: "https://three-in-arow.netlify.app/",

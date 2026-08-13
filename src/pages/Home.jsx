@@ -2,11 +2,12 @@ import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import skills from "../assets/skills.png";
 import { motion } from "motion/react";
+
 const EditorCard = ({ title, children, className = "" }) => {
   return (
     <section className={`sticky min-h-screen w-full px-6 pt-20 ${className}`}>
       <div className="mx-auto w-200 max-w-4xl h-[450px] overflow-hidden rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
-        {/* VS Code Header */}
+        {/* En-tête VS Code */}
         <div className="flex h-11 items-center border-b border-zinc-700 bg-[#181818] px-4">
           <div className="flex items-center gap-2">
             <span className="h-3 w-3 rounded-full bg-red-500/80" />
@@ -17,7 +18,7 @@ const EditorCard = ({ title, children, className = "" }) => {
           <span className="ml-6 text-xs text-zinc-400">{title}</span>
         </div>
 
-        {/* Content */}
+        {/* Contenu */}
         <div className="flex-1 min-h-0 w-full overflow-hidden bg-[#1e1e1e]">
           {children}
         </div>
@@ -29,10 +30,10 @@ const EditorCard = ({ title, children, className = "" }) => {
 const Home = () => {
   return (
     <main className="min-h-screen w-full bg-[#0d1117]">
-      {/* CARD 1 — PROFILE */}
-      <EditorCard title="profile.js" className="sticky top-0 z-10 pt-6 pt-20 ">
+      {/* CARTE 1 — PROFIL */}
+      <EditorCard title="profil.js" className="sticky top-0 z-10 pt-6 pt-20">
         <div className="flex mt-10">
-          {/* Line numbers */}
+          {/* Numéros de lignes */}
           <div className="w-16 shrink-0 select-none pr-5 text-right text-lg text-zinc-600">
             <div>1</div>
             <div>2</div>
@@ -49,32 +50,25 @@ const Home = () => {
 
           {/* Code */}
           <div className="whitespace-nowrap text-lg">
-            {/* Line 1 */}
+            {/* Ligne 1 */}
             <div>
               <span className="text-purple-400">const</span>
-
               <span className="mx-3 text-blue-400">developer</span>
-
               <span className="text-zinc-300">=</span>
-
               <span className="ml-3 text-yellow-400">{"{"}</span>
             </div>
 
-            {/* Line 2 */}
+            {/* Ligne 2 */}
             <div className="pl-8">
-              <span className="text-sky-300">name</span>
-
+              <span className="text-sky-300">nom</span>
               <span className="mx-3 text-zinc-300">:</span>
-
               <span className="text-orange-300">"Omar"</span>
-
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 3 */}
+            {/* Ligne 3 */}
             <div className="pl-8">
               <span className="text-sky-300">email</span>
-
               <span className="mx-3 text-zinc-300">:</span>
 
               <span
@@ -82,7 +76,7 @@ const Home = () => {
                   (window.location.href = "mailto:omar0@gmail.com")
                 }
                 className="cursor-pointer text-orange-300 transition hover:text-orange-200 hover:underline"
-                title="Send email"
+                title="Envoyer un email"
               >
                 "omar0@gmail.com"
               </span>
@@ -90,35 +84,29 @@ const Home = () => {
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 4 */}
+            {/* Ligne 4 */}
             <div className="pl-8">
-              <span className="text-sky-300">field</span>
-
+              <span className="text-sky-300">domaine</span>
               <span className="mx-3 text-zinc-300">:</span>
-
               <span className="text-orange-300">
-                "Junior Fullstack Developer"
+                "Développeur Fullstack Junior"
               </span>
-
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 5 */}
+            {/* Ligne 5 */}
             <div className="pl-8">
-              <span className="text-sky-300">city</span>
-
+              <span className="text-sky-300">ville</span>
               <span className="mx-3 text-zinc-300">:</span>
-
               <span className="text-orange-300">
                 "Tinghir - Drâa-Tafilalet"
               </span>
-
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 6 */}
+            {/* Ligne 6 */}
             <div className="pl-8">
-              <span className="text-sky-300">skills</span>
+              <span className="text-sky-300">compétences</span>
 
               <span className="ml-3 text-zinc-300">
                 : navigate("
@@ -134,9 +122,9 @@ const Home = () => {
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 7 */}
+            {/* Ligne 7 */}
             <div className="pl-8">
-              <span className="text-sky-300">projects</span>
+              <span className="text-sky-300">projets</span>
 
               <span className="ml-3 text-zinc-300">
                 : navigate("
@@ -152,9 +140,9 @@ const Home = () => {
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 8 */}
+            {/* Ligne 8 */}
             <div className="pl-8">
-              <span className="text-sky-300">moreAboutMe</span>
+              <span className="text-sky-300">àPropos</span>
 
               <span className="ml-3 text-zinc-300">
                 : navigate("
@@ -170,36 +158,32 @@ const Home = () => {
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 9 */}
+            {/* Ligne 9 */}
             <div className="pl-8">
-              <span className="text-sky-300">available</span>
-
+              <span className="text-sky-300">disponible</span>
               <span className="mx-3 text-zinc-300">:</span>
-
               <span className="text-blue-400">true</span>
-
               <span className="text-zinc-300">,</span>
             </div>
 
-            {/* Line 10 */}
+            {/* Ligne 10 */}
             <div className="pl-8">
               <span className="text-green-600">
-                // Always learning. Always building.
+                // Toujours apprendre. Toujours construire.
               </span>
             </div>
 
-            {/* Line 11 */}
+            {/* Ligne 11 */}
             <div>
               <span className="text-yellow-400">{"}"}</span>
-
               <span className="ml-2 animate-pulse text-zinc-400">|</span>
             </div>
           </div>
         </div>
       </EditorCard>
 
-      {/* CARD 2 — PROJECTS */}
-      <EditorCard title="projects.js" className="sticky top-2 z-20 pt-10 ml-1">
+      {/* CARTE 2 — PROJETS */}
+      <EditorCard title="projets.js" className="sticky top-2 z-20 pt-10 ml-1">
         <div className="flex gap-4 w-full overflow-x-auto">
           {projects.map((p, i) => (
             <motion.div
@@ -209,9 +193,8 @@ const Home = () => {
               transition={{
                 duration: 0.5,
                 delay: i * 0.25,
-                // ease: "easeOut",
               }}
-              className="shrink-0 w-[80%] "
+              className="shrink-0 w-[80%]"
             >
               <img
                 src={p.image}
@@ -223,19 +206,22 @@ const Home = () => {
         </div>
       </EditorCard>
 
-      {/* CARD 3 — SKILLS */}
-      <EditorCard title="skills.js" className="sticky top-4 z-30 pt-20 ml-2">
+      {/* CARTE 3 — COMPÉTENCES */}
+      <EditorCard
+        title="compétences.js"
+        className="sticky top-4 z-30 pt-20 ml-2"
+      >
         <div className="h-full w-full">
           <img
             src={skills}
-            alt="skills"
-            className="block h-full w-full object-cover "
+            alt="compétences"
+            className="block h-full w-full object-cover"
           />
         </div>
       </EditorCard>
 
-      {/* CARD 4 — ABOUT */}
-      <EditorCard title="about.js" className="sticky top-20 z-50 pt-20 ml-3">
+      {/* CARTE 4 — À PROPOS */}
+      <EditorCard title="principe.js" className="sticky top-20 z-50 pt-20 ml-3">
         <div className="min-h-[400px] w-full flex flex-col items-center justify-center text-center px-8">
           <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-[-0.01em] font-mono text-neutral-500">
             DRY
