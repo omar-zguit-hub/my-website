@@ -15,7 +15,8 @@ const projectFiles = [
         language: "javascript",
       },
       {
-        name: "TaskManager.jsx",
+        name:
+         "TaskManager.jsx",
         type: "file",
         language: "JavaScript",
       },

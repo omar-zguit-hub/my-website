@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import { useState } from "react";
+import ProjectDetails from "./pages/ProjectDetails";
 
 function App() {
   const [explorerOpen, setExplorerOpen] = useState(true);
@@ -26,6 +27,7 @@ function App() {
             <Route element={<Content />}>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/project/:id" element={<ProjectDetails />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
