@@ -49,13 +49,13 @@ function Contact() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="max-w-5xl mx-auto p-6"
+      className="max-w-5xl mx-auto p-2 md:p-6"
     >
       {/* ================= Header ================= */}
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-2xl font-bold mb-6"
+        className="text-xl md:text-2xl font-bold mb-6"
       >
         {t("contact.title")}
       </motion.h2>

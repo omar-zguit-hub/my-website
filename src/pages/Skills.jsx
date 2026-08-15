@@ -6,11 +6,11 @@ function Skills() {
   const { t } = useTranslation();
 
   return (
-    <div className="p-6 max-w-4xl mx-auto p-2">
+    <div className="p-2 md:p-6 max-w-4xl mx-auto">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-2xl font-bold mb-6"
+        className="text-xl md:text-2xl font-bold mb-6"
       >
         {t("skills.title")}
       </motion.h2>

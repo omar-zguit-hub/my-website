@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 
 const EditorCard = ({ title, children, className = "" }) => {
   return (
-    <section dir="ltr" className={`sticky min-h-screen md:w-full px-3 sm:px-4 md:px-6 pt-20 ${className}`}>
-      <div className="mx-auto w-200 max-w-4xl h-[450px] overflow-hidden rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
+    <section dir="ltr" className={`sticky min-h-screen w-full px-2 sm:px-3 md:px-4 lg:px-6 pt-20 ${className}`}>
+      <div className="mx-auto w-full md:w-200 h-auto md:h-[450px] max-w-4xl overflow-hidden rounded-lg md:rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
         {/* VS Code Header */}
         <div className="flex h-11 items-center border-b border-zinc-700 bg-[#181818] px-4">
           <div className="flex items-center gap-2">
@@ -41,7 +41,7 @@ const Home = () => {
       >
         <div className="flex mt-10">
           {/* Line Numbers */}
-          <div className="w-16 shrink-0 select-none pr-5 text-right text-lg text-zinc-600">
+          <div className="w-10 md:w-16 shrink-0 select-none pr-2 md:pr-5 text-right text-xs md:text-sm lg:text-lg text-zinc-600">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -56,7 +56,7 @@ const Home = () => {
           </div>
 
           {/* Code */}
-          <div className="whitespace-nowrap text-lg">
+          <div className="whitespace-nowrap text-xs md:text-sm lg:text-lg overflow-x-auto">
             {/* Line 1 */}
             <div>
               <span className="text-purple-400">const</span>
@@ -261,8 +261,8 @@ const Home = () => {
         title={t("home.cards.principle")}
         className="sticky top-20 z-50 pt-20 ml-3"
       >
-        <div className="min-h-[400px] w-full flex flex-col items-center justify-center text-center px-8">
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold tracking-[-0.01em] font-mono text-neutral-500">
+        <div className="min-h-[400px] w-full flex flex-col items-center justify-center text-center px-4 md:px-8">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-[-0.01em] font-mono text-neutral-500">
             {t("home.principle.title")}
           </h1>
 
@@ -270,7 +270,7 @@ const Home = () => {
             href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-base md:text-lg tracking-wide text-neutral-500 hover:text-neutral-300 transition-colors duration-200 relative group"
+            className="font-mono text-xs sm:text-sm md:text-base lg:text-lg tracking-wide text-neutral-500 hover:text-neutral-300 transition-colors duration-200 relative group"
           >
             <span className="text-neutral-600">"</span>
 

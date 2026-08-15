@@ -33,9 +33,9 @@ function About() {
           <div
             className={`flex-1 text-center ${i18n.language === "fr" ? "md:text-left" : "md:text-right"}`}
           >
-            <h1 className="text-3xl font-bold text-white">{t("about.name")}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-white">{t("about.name")}</h1>
 
-            <p className="text-blue-400 font-medium mt-1">{t("about.role")}</p>
+            <p className="text-sm md:text-base text-blue-400 font-medium mt-1">{t("about.role")}</p>
 
             <div className="flex items-center justify-center md:justify-start gap-1 mt-2 text-gray-400">
               <CiLocationOn size={20} />
@@ -93,8 +93,8 @@ function About() {
       </div>
 
       {/* ================= About Me ================= */}
-      <section className="p-6">
-        <h2 className="text-2xl font-bold text-white mb-4">
+      <section className="p-2 md:p-6">
+        <h2 className="text-xl md:text-2xl font-bold text-white mb-4">
           {t("about.aboutMe.title")}
         </h2>
 
@@ -104,8 +104,8 @@ function About() {
       </section>
 
       {/* ================= Experience ================= */}
-      <section className="px-6 pb-6">
-        <h2 className="text-2xl font-bold text-white mb-5">
+      <section className="px-2 md:px-6 pb-6">
+        <h2 className="text-xl md:text-2xl font-bold text-white mb-5">
           {t("about.experience.title")}
         </h2>
 
@@ -113,7 +113,7 @@ function About() {
           {/* Experience 1 */}
           <div className="border-l-2 border-blue-500 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-base md:text-lg font-semibold text-white">
                 {t("about.experience.fullstack.title")}
               </h3>
             </div>
@@ -130,7 +130,7 @@ function About() {
           {/* Experience 2 */}
           <div className="border-l-2 border-gray-600 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-base md:text-lg font-semibold text-white">
                 {t("about.experience.web.title")}
               </h3>
             </div>
@@ -147,8 +147,8 @@ function About() {
       </section>
 
       {/* ================= Education ================= */}
-      <section className="px-6 pb-6">
-        <h2 className="text-2xl font-bold text-white mb-5">
+      <section className="px-2 md:px-6 pb-6">
+        <h2 className="text-xl md:text-2xl font-bold text-white mb-5">
           {t("about.education.title")}
         </h2>
 
@@ -156,7 +156,7 @@ function About() {
           {/* Education 1 */}
           <div className="border-l-2 border-blue-500 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-base md:text-lg font-semibold text-white">
                 {t("about.education.digital.title")}
               </h3>
 
@@ -191,7 +191,7 @@ function About() {
           {/* Education 2 */}
           <div className="border-l-2 border-gray-600 pl-5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-base md:text-lg font-semibold text-white">
                 {t("about.education.selfLearning.title")}
               </h3>
             </div>
