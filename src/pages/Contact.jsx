@@ -1,28 +1,22 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useForm } from "@formspree/react";
 
 function Contact() {
   const { t, i18n } = useTranslation();
 
+  // Formspree
+  const [state, handleSubmit] = useForm("xnpabqdk");
+
+  // Local form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("Formulaire envoyé :", formData);
-
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
+  const [showSnackbar, setShowSnackbar] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -30,6 +24,25 @@ function Contact() {
       [e.target.name]: e.target.value,
     });
   };
+
+  useEffect(() => {
+    if (state.succeeded) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+
+      setShowSnackbar(true);
+
+      const timer = setTimeout(() => {
+        setShowSnackbar(false);
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded, state.submitting]);
 
   return (
     <motion.div
@@ -61,7 +74,10 @@ function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* ================= Contact Information ================= */}
         <motion.div
-          initial={{ opacity: 0, x: i18n.language === "fr" ? -20 : 20 }}
+          initial={{
+            opacity: 0,
+            x: i18n.language === "fr" ? -20 : 20,
+          }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
           className="bg-gray-800/60 border border-gray-700 rounded-xl p-6"
@@ -204,13 +220,43 @@ function Contact() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full flex items-center justify-center px-4 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={state.submitting}
+            className="w-full flex items-center justify-center px-4 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Send className="mr-2" size={18} />
-            {t("contact.form.submit")}
+            <Send className="mr-2 ml-2" size={18} />
+
+            {state.submitting ? "Sending..." : t("contact.form.submit")}
           </motion.button>
+
+          {/* Success */}
+          {state.succeeded && (
+            <p className="text-green-400 text-sm text-center">
+              Message sent successfully!
+            </p>
+          )}
+
+          {/* General error */}
+          {state.errors && (
+            <p className="text-red-400 text-sm text-center">
+              Something went wrong. Please try again.
+            </p>
+          )}
         </motion.form>
       </div>
+
+      {showSnackbar && (
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 30, scale: 0.95 }}
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-6 right-6 z-50 bg-gray-800 border border-green-500/50 text-white px-5 py-4 rounded-lg shadow-xl flex items-center gap-3"
+        >
+          <div className="flex items-center justify-center w-7 h-7 rounded-full bg-green-500/20 text-white">
+            ✓
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   );
 }
