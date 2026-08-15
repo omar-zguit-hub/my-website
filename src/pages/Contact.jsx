@@ -119,7 +119,7 @@ function Contact() {
                   {t("contact.information.phone.label")}
                 </p>
 
-                <p  dir="ltr">+212 6 40 79 07 84</p>
+                <p dir="ltr">+212 6 40 79 07 84</p>
               </div>
             </a>
 
@@ -225,8 +225,10 @@ function Contact() {
           >
             <Send className="mr-2 ml-2" size={18} />
 
-            {state.submitting ? t("contact.form.sending") : t("contact.form.submit")}
-          </motion.button>  
+            {state.submitting
+              ? t("contact.form.sending")
+              : t("contact.form.submit")}
+          </motion.button>
         </motion.form>
       </div>
 

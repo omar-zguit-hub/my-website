@@ -31,8 +31,8 @@ function App() {
   return (
     <div className="flex h-screen overflow-hidden bg-gray-900 text-white">
       {/* Mobile Header */}
-      <MobileHeader 
-        menuOpen={menuOpen} 
+      <MobileHeader
+        menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         showLanguages={showLanguages}
         setShowLanguages={setShowLanguages}
@@ -53,9 +53,7 @@ function App() {
       <div className="flex min-w-0 flex-1 flex-col pt-16 md:pt-0">
         <div className="flex min-h-0 flex-1">
           {/* Desktop Explorer */}
-          <div className="hidden md:block">
-            {explorerOpen && <Explorer />}
-          </div>
+          <div className="hidden md:block">{explorerOpen && <Explorer />}</div>
 
           {/* Content */}
           <Routes>

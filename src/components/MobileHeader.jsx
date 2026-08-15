@@ -4,7 +4,12 @@ import { MdOutlineLanguage } from "react-icons/md";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
-function MobileHeader({ menuOpen, setMenuOpen, showLanguages, setShowLanguages }) {
+function MobileHeader({
+  menuOpen,
+  setMenuOpen,
+  showLanguages,
+  setShowLanguages,
+}) {
   const { i18n } = useTranslation();
 
   return (

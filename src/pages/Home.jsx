@@ -6,7 +6,10 @@ import { useTranslation } from "react-i18next";
 
 const EditorCard = ({ title, children, className = "" }) => {
   return (
-    <section dir="ltr" className={`sticky min-h-screen w-full px-2 sm:px-3 md:px-4 lg:px-6 pt-20 ${className}`}>
+    <section
+      dir="ltr"
+      className={`sticky min-h-screen w-full px-2 sm:px-3 md:px-4 lg:px-6 pt-20 ${className}`}
+    >
       <div className="mx-auto w-full md:w-200 h-auto md:h-[450px] max-w-4xl overflow-hidden rounded-lg md:rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
         {/* VS Code Header */}
         <div className="flex h-11 items-center border-b border-zinc-700 bg-[#181818] px-4">
@@ -61,9 +64,7 @@ const Home = () => {
             <div>
               <span className="text-purple-400">const</span>
 
-              <span className="mx-3 text-blue-400">
-                developer
-              </span>
+              <span className="mx-3 text-blue-400">developer</span>
 
               <span className="text-zinc-300">=</span>
 
@@ -184,9 +185,7 @@ const Home = () => {
 
             {/* Line 9 */}
             <div className="pl-8">
-              <span className="text-sky-300">
-                available
-              </span>
+              <span className="text-sky-300">available</span>
 
               <span className="mx-3 text-zinc-300">:</span>
 
