@@ -190,7 +190,8 @@
         "placeholder": "Écrivez votre message..."
       },
 
-      "submit": "Envoyer le message"
+      "submit": "Envoyer le message",
+      "sending": "Envoi..."
     }
   },
 

@@ -119,7 +119,7 @@ function Contact() {
                   {t("contact.information.phone.label")}
                 </p>
 
-                <p>+212 6 40 79 07 84</p>
+                <p  dir="ltr">+212 6 40 79 07 84</p>
               </div>
             </a>
 
@@ -225,22 +225,8 @@ function Contact() {
           >
             <Send className="mr-2 ml-2" size={18} />
 
-            {state.submitting ? "Sending..." : t("contact.form.submit")}
-          </motion.button>
-
-          {/* Success */}
-          {state.succeeded && (
-            <p className="text-green-400 text-sm text-center">
-              Message sent successfully!
-            </p>
-          )}
-
-          {/* General error */}
-          {state.errors && (
-            <p className="text-red-400 text-sm text-center">
-              Something went wrong. Please try again.
-            </p>
-          )}
+            {state.submitting ? t("contact.form.sending") : t("contact.form.submit")}
+          </motion.button>  
         </motion.form>
       </div>
 

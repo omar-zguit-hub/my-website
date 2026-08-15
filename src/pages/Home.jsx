@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const EditorCard = ({ title, children, className = "" }) => {
   return (
-    <section dir="ltr" className={`sticky min-h-screen w-full px-6 pt-20 ${className}`}>
+    <section dir="ltr" className={`sticky min-h-screen md:w-full px-3 sm:px-4 md:px-6 pt-20 ${className}`}>
       <div className="mx-auto w-200 max-w-4xl h-[450px] overflow-hidden rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
         {/* VS Code Header */}
         <div className="flex h-11 items-center border-b border-zinc-700 bg-[#181818] px-4">
