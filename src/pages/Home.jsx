@@ -2,7 +2,7 @@ import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import skills from "../assets/skills.png";
 import { motion } from "motion/react";
-import { useTranslation } from "react-i18next"; 
+import { useTranslation } from "react-i18next";
 
 const EditorCard = ({ title, children, className = "" }) => {
   return (
@@ -349,7 +349,7 @@ const Home = () => {
             <span className="text-neutral-600">"</span>
           </a>
         </div>
-      </EditorCard> 
+      </EditorCard>
     </main>
   );
 };
