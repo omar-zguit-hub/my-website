@@ -2,7 +2,7 @@ import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
 import skills from "../assets/skills.png";
 import { motion } from "motion/react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; 
 
 const EditorCard = ({ title, children, className = "" }) => {
   return (
@@ -16,9 +16,9 @@ const EditorCard = ({ title, children, className = "" }) => {
   mx-auto
 //   w-[calc(100%-24px)]
 // max-w-[746px]
-// max-h-[426px]
+max-h-[426px]
  w-[95%]
-aspect-[5/3]
+aspect-[11/7]
 
   max-w-4xl
   overflow-hidden
@@ -26,7 +26,7 @@ aspect-[5/3]
   border border-zinc-700
   bg-[#1e1e1e]
   shadow-2xl
-  mt-2
+  // mt-20 sm:mt-20 xl:mt-2 lg:mt-2
 "
       >
         {/* VS Code Header */}
@@ -58,9 +58,9 @@ const Home = () => {
       {/* ================= PROFILE ================= */}
 
       <EditorCard title={t("home.cards.profile")} className="sticky top-0 z-10">
-        <div className="flex mt-3 sm:mt-4 md:mt-5 pb-3 sm:pb-4 md:pb-5">
+        <div className="flex mt-[clamp(0.75rem,2vw,1.25rem)] pb-[clamp(0.75rem,2vw,1.25rem)]">
           {/* Line Numbers */}
-          <div className="w-8 sm:w-8 md:w-12 lg:w-16 shrink-0 select-none pr-1 sm:pr-2 md:pr-3 lg:pr-5 text-right text-xs sm:text-sm md:text-base lg:text-lg text-zinc-600">
+          <div className="w-[clamp(2rem,5vw,4rem)] shrink-0 select-none pr-[clamp(0.25rem,1.2vw,1.25rem)] text-right text-[clamp(0.75rem,1.2vw,1.125rem)] text-zinc-600">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -75,27 +75,29 @@ const Home = () => {
           </div>
 
           {/* Code */}
-          <div className="whitespace-nowrap text-xs sm:text-lg md:text-lg lg:text-lg overflow-x-auto">
+          <div className="whitespace-nowrap text-[clamp(0.57rem,2.4vw,1.125rem)] overflow-x-auto">
             {/* Line 1 */}
             <div>
               <span className="text-purple-400">const</span>
 
-              <span className="mx-1.5 sm:mx-2 md:mx-3 text-blue-400">
+              <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-blue-400">
                 developer
               </span>
 
               <span className="text-zinc-300">=</span>
 
-              <span className="ml-1.5 sm:ml-2 md:ml-3 text-yellow-400">
+              <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-yellow-400">
                 {"{"}
               </span>
             </div>
 
             {/* Line 2 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">name</span>
 
-              <span className="mx-1.5 sm:mx-2 md:mx-3 text-zinc-300">:</span>
+              <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
+                :
+              </span>
 
               <span className="text-orange-300">
                 "{t("home.profile.name")}"
@@ -105,10 +107,12 @@ const Home = () => {
             </div>
 
             {/* Line 3 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">email</span>
 
-              <span className="mx-1.5 sm:mx-2 md:mx-3 text-zinc-300">:</span>
+              <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
+                :
+              </span>
 
               <span
                 onClick={() =>
@@ -124,10 +128,12 @@ const Home = () => {
             </div>
 
             {/* Line 4 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">field</span>
 
-              <span className="mx-1.5 sm:mx-2 md:mx-3 text-zinc-300">:</span>
+              <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
+                :
+              </span>
 
               <span className="text-orange-300">
                 "{t("home.profile.field")}"
@@ -137,10 +143,12 @@ const Home = () => {
             </div>
 
             {/* Line 5 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">city</span>
 
-              <span className="mx-1.5 sm:mx-2 md:mx-3 text-zinc-300">:</span>
+              <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
+                :
+              </span>
 
               <span className="text-orange-300">
                 "{t("home.profile.city")}"
@@ -150,10 +158,10 @@ const Home = () => {
             </div>
 
             {/* Line 6 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">skills</span>
 
-              <span className="ml-1.5 sm:ml-2 md:ml-3 text-zinc-300">
+              <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
                 : navigate("
                 <Link
                   className="hover:text-cyan-200 hover:underline"
@@ -168,10 +176,10 @@ const Home = () => {
             </div>
 
             {/* Line 7 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">projects</span>
 
-              <span className="ml-1.5 sm:ml-2 md:ml-3 text-zinc-300">
+              <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
                 : navigate("
                 <Link
                   className="hover:text-cyan-200 hover:underline"
@@ -186,10 +194,10 @@ const Home = () => {
             </div>
 
             {/* Line 8 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">about</span>
 
-              <span className="ml-1.5 sm:ml-2 md:ml-3 text-zinc-300">
+              <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
                 : navigate("
                 <Link
                   className="hover:text-cyan-200 hover:underline"
@@ -204,10 +212,12 @@ const Home = () => {
             </div>
 
             {/* Line 9 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-sky-300">available</span>
 
-              <span className="mx-1.5 sm:mx-2 md:mx-3 text-zinc-300">:</span>
+              <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
+                :
+              </span>
 
               <span className="text-blue-400">true</span>
 
@@ -215,7 +225,7 @@ const Home = () => {
             </div>
 
             {/* Line 10 */}
-            <div className="pl-4 sm:pl-5 md:pl-6 lg:pl-8">
+            <div className="pl-[clamp(1rem,2.5vw,2rem)]">
               <span className="text-green-600">
                 // {t("home.profile.comment")}
               </span>
@@ -225,7 +235,7 @@ const Home = () => {
             <div>
               <span className="text-yellow-400">{"}"}</span>
 
-              <span className="ml-1 sm:ml-2 animate-pulse text-zinc-400">
+              <span className="ml-[clamp(0.25rem,0.8vw,0.5rem)] animate-pulse text-zinc-400">
                 |
               </span>
             </div>
@@ -282,13 +292,31 @@ const Home = () => {
         title={t("home.cards.principle")}
         className="
     z-30
-    pt-12 sm:pt-14 md:pt-16 lg:pt-20
+    pt-8 sm:pt-10 md:pt-12 lg:pt-16
     ml-0 sm:ml-1 md:ml-2 lg:ml-3
-    max-sm:mt-8
+    max-sm:mt-6
   "
       >
-        <div className="min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] w-full flex flex-col items-center justify-center text-center px-3 sm:px-4 md:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold tracking-[-0.01em] font-mono text-neutral-500">
+        <div
+          className="
+      w-full
+      min-h-[200px] sm:min-h-[240px] md:min-h-[280px] lg:min-h-[320px]
+      flex flex-col items-center justify-center
+      text-center
+      px-4 sm:px-6 md:px-8 lg:px-10
+      gap-4 sm:gap-5 md:gap-6
+    "
+        >
+          <h1
+            className="
+        font-bold font-mono text-neutral-500
+        tracking-[-0.03em]
+        leading-[0.9]
+        text-[clamp(2.5rem,10vw,8rem)]
+        max-w-full
+        break-words
+      "
+          >
             {t("home.principle.title")}
           </h1>
 
@@ -296,18 +324,32 @@ const Home = () => {
             href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg tracking-wide text-neutral-500 hover:text-neutral-300 transition-colors duration-200 relative group"
+            className="
+        font-mono tracking-wide
+        text-neutral-500
+        hover:text-neutral-300
+        transition-colors duration-200
+        relative group
+        max-w-[90%] sm:max-w-[80%] md:max-w-[70%]
+        leading-relaxed
+      "
           >
             <span className="text-neutral-600">"</span>
 
-            <span className="group-hover:underline underline-offset-4">
+            <span
+              className="
+          text-[clamp(0.65rem,1.5vw,1.125rem)]
+          group-hover:underline
+          underline-offset-4
+        "
+            >
               {t("home.principle.text")}
             </span>
 
             <span className="text-neutral-600">"</span>
           </a>
         </div>
-      </EditorCard>
+      </EditorCard> 
     </main>
   );
 };
