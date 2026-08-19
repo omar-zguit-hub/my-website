@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function MobileMenu({ menuOpen, setMenuOpen }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
 
   const menuItems = [
@@ -38,11 +38,11 @@ function MobileMenu({ menuOpen, setMenuOpen }) {
           {/* Drawer */}
           <motion.div
             key="drawer"
-            initial={{ x: -300 }}
+            initial={{ x: i18n.language === "fr" ? -300 : 300 }}
             animate={{ x: 0 }}
-            exit={{ x: -300 }}
+            exit={{ x: i18n.language === "fr" ? -300 : 300 }}
             transition={{ duration: 0.3 }}
-            className="fixed left-0 top-0 bottom-0 z-50 w-72 bg-gray-800 border-r border-zinc-700 flex flex-col"
+            className={`fixed ${i18n.language === "fr" ? "left-0" : "right-0"} top-0 bottom-0 z-50 w-50 bg-gray-800 border-r border-zinc-700 flex flex-col`}
           >
             {/* Header */}
             <div className="flex items-center justify-between h-16 px-4 border-b border-zinc-700">
@@ -76,7 +76,7 @@ function MobileMenu({ menuOpen, setMenuOpen }) {
                           : "text-gray-400 hover:text-white hover:bg-gray-700"
                       }`}
                     >
-                      <Icon size={18} />
+                      <Icon size={20} />
                       <span className="text-sm">{item.label}</span>
                     </Link>
                   </motion.div>

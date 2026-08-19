@@ -12,7 +12,6 @@ const Explorer = () => {
 
   const [files, setFiles] = useState(getFileStructure(path));
   const [selectedFile, setSelectedFile] = useState(null);
-  const [showLanguages, setShowLanguages] = useState(false);
 
   const { i18n, t } = useTranslation();
 
@@ -54,7 +53,7 @@ const Explorer = () => {
     <motion.div
       initial={{ opacity: 0, x: i18n.language === "fr" ? -20 : 20 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3 }} 
+      transition={{ duration: 0.3 }}
       className="bg-gray-800 h-screen overflow-y-auto w-55 pt-1 pb-6"
     >
       <div className="p-2">
@@ -67,41 +66,16 @@ const Explorer = () => {
           {/* Language button */}
           <button
             type="button"
-            onClick={() => setShowLanguages((prev) => !prev)}
+            onClick={() =>
+              i18n.language === "ar"
+                ? i18n.changeLanguage("fr")
+                : i18n.changeLanguage("ar")
+            }
             className="p-1 text-gray-400 rounded hover:bg-gray-700 hover:text-white transition cursor-pointer"
             aria-label={t("explorer.language")}
           >
             <MdOutlineLanguage size={18} />
           </button>
-
-          {/* Language menu */}
-          {showLanguages && (
-            <div className="absolute right-0 top-8 z-50 w-32 rounded-md border border-gray-700 bg-[#252526] shadow-lg">
-              {/* French */}
-              <button
-                type="button"
-                onClick={() => {
-                  i18n.changeLanguage("fr");
-                  setShowLanguages(false);
-                }}
-                className="block w-full px-3 py-2 text-left text-sm text-gray-300 hover:bg-gray-700 cursor-pointer"
-              >
-                {t("explorer.french")}
-              </button>
-
-              {/* Arabic */}
-              <button
-                type="button"
-                onClick={() => {
-                  i18n.changeLanguage("ar");
-                  setShowLanguages(false);
-                }}
-                className="block w-full px-3 py-2 text-left text-sm text-gray-300 hover:bg-gray-700 cursor-pointer"
-              >
-                {t("explorer.arabic")}
-              </button>
-            </div>
-          )}
         </div>
 
         <div className="space-y-1">

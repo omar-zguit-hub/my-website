@@ -18,8 +18,7 @@ import { useTranslation } from "react-i18next";
 
 function App() {
   const [explorerOpen, setExplorerOpen] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [showLanguages, setShowLanguages] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); 
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -33,9 +32,7 @@ function App() {
       {/* Mobile Header */}
       <MobileHeader
         menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-        showLanguages={showLanguages}
-        setShowLanguages={setShowLanguages}
+        setMenuOpen={setMenuOpen} 
       />
 
       {/* Mobile Menu Drawer */}

@@ -4,12 +4,7 @@ import { MdOutlineLanguage } from "react-icons/md";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
-function MobileHeader({
-  menuOpen,
-  setMenuOpen,
-  showLanguages,
-  setShowLanguages,
-}) {
+function MobileHeader({ menuOpen, setMenuOpen }) {
   const { i18n } = useTranslation();
 
   return (
@@ -24,13 +19,8 @@ function MobileHeader({
         {menuOpen ? <X size={24} /> : <Menu size={24} />}
       </motion.button>
 
-      {/* Center: Portfolio Title */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 text-sm font-semibold text-gray-300">
-        portfolio
-      </div>
-
       {/* Right: Icons */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1">
         {/* GitHub */}
         <motion.a
           href="https://github.com/omar-zguit-hub"
@@ -61,43 +51,16 @@ function MobileHeader({
         <div className="relative">
           <motion.button
             whileTap={{ scale: 0.95 }}
-            onClick={() => setShowLanguages(!showLanguages)}
+            onClick={() =>
+              i18n.language === "ar"
+                ? i18n.changeLanguage("fr")
+                : i18n.changeLanguage("ar")
+            }
             className="p-2 text-gray-400 hover:text-white transition"
             aria-label="Change language"
           >
             <MdOutlineLanguage size={18} />
           </motion.button>
-
-          {/* Language Menu */}
-          {showLanguages && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="absolute right-0 top-12 z-50 w-32 rounded-md border border-gray-700 bg-[#252526] shadow-lg"
-            >
-              <button
-                type="button"
-                onClick={() => {
-                  i18n.changeLanguage("fr");
-                  setShowLanguages(false);
-                }}
-                className="block w-full px-3 py-2 text-left text-sm text-gray-300 hover:bg-gray-700 cursor-pointer"
-              >
-                Français
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  i18n.changeLanguage("ar");
-                  setShowLanguages(false);
-                }}
-                className="block w-full px-3 py-2 text-left text-sm text-gray-300 hover:bg-gray-700 cursor-pointer"
-              >
-                العربية
-              </button>
-            </motion.div>
-          )}
         </div>
       </div>
     </div>
