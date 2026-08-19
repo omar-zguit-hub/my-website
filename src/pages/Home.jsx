@@ -8,15 +8,27 @@ const EditorCard = ({ title, children, className = "" }) => {
   return (
     <section
       dir="ltr"
-      className={`sticky min-h-screen w-full px-2 sm:px-3 md:px-4 lg:px-6 pt-12 sm:pt-14 md:pt-16 lg:pt-20 ${className}`}
+      className={`relative min-h-screen w-full px-2 sm:px-3 md:px-4 lg:px-6 pt-12 sm:pt-14 md:pt-16 lg:pt-20 ${className}`}
     >
       <div
-        className=" 
-        mx-auto 
-        w-[95%] 
-        sm:w-[92%] md:w-[88%] lg:w-[85%] xl:w-[80%] 
-        h-[360px sm:h-[420px] md:h-[340px] lg:h-[560px] xl:h-[430px] 
-        max-w-4xl overflow-hidden rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl mt-2">        
+        className="
+  sticky top-0
+  mx-auto
+//   w-[calc(100%-24px)]
+// max-w-[746px]
+// max-h-[426px]
+ w-[95%]
+aspect-[5/3]
+
+  max-w-4xl
+  overflow-hidden
+  rounded-3xl
+  border border-zinc-700
+  bg-[#1e1e1e]
+  shadow-2xl
+  mt-2
+"
+      >
         {/* VS Code Header */}
         <div className="flex h-9 sm:h-10 md:h-11 lg:h-12 items-center border-b border-zinc-700 bg-[#181818] px-2 sm:px-3 md:px-4">
           <div className="flex items-center gap-1.5 sm:gap-2">
@@ -48,7 +60,7 @@ const Home = () => {
       <EditorCard title={t("home.cards.profile")} className="sticky top-0 z-10">
         <div className="flex mt-3 sm:mt-4 md:mt-5 pb-3 sm:pb-4 md:pb-5">
           {/* Line Numbers */}
-          <div className="w-7 sm:w-8 md:w-12 lg:w-16 shrink-0 select-none pr-1 sm:pr-2 md:pr-3 lg:pr-5 text-right text-xs sm:text-sm md:text-base lg:text-lg text-zinc-600">
+          <div className="w-8 sm:w-8 md:w-12 lg:w-16 shrink-0 select-none pr-1 sm:pr-2 md:pr-3 lg:pr-5 text-right text-xs sm:text-sm md:text-base lg:text-lg text-zinc-600">
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -63,7 +75,7 @@ const Home = () => {
           </div>
 
           {/* Code */}
-          <div className="whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg overflow-x-auto">
+          <div className="whitespace-nowrap text-xs sm:text-lg md:text-lg lg:text-lg overflow-x-auto">
             {/* Line 1 */}
             <div>
               <span className="text-purple-400">const</span>
@@ -225,7 +237,7 @@ const Home = () => {
 
       <EditorCard
         title={t("home.cards.projects")}
-        className="sticky top-2 z-20 pt-6 sm:pt-8 md:pt-10 lg:pt-12 ml-0 sm:ml-1"
+        className="sticky top-2 z-20 pt-6 sm:pt-8 md:pt-10 lg:pt-12 ml-0 sm:ml-1 max-sm:mt-8"
       >
         <div className="flex gap-2 sm:gap-3 md:gap-4 w-full overflow-x-auto">
           {projects.map((p, i) => (
@@ -242,7 +254,7 @@ const Home = () => {
               <img
                 src={p.image}
                 alt={p.name}
-                className="block w-full h-auto object-cover rounded-md sm:rounded-lg"
+                className="block w-full h-full object-cover rounded-md sm:rounded-lg"
               />
             </motion.div>
           ))}
@@ -253,7 +265,7 @@ const Home = () => {
 
       <EditorCard
         title={t("home.cards.skills")}
-        className="sticky top-4 z-30 pt-12 sm:pt-14 md:pt-16 lg:pt-20 ml-0 sm:ml-1 md:ml-2"
+        className="sticky top-4 z-30 pt-12 sm:pt-14 md:pt-16 lg:pt-20 ml-0 sm:ml-1 md:ml-2 max-sm:mt-8"
       >
         <div className="h-full w-full">
           <img
@@ -268,7 +280,12 @@ const Home = () => {
 
       <EditorCard
         title={t("home.cards.principle")}
-        className="sticky top-12 sm:top-16 md:top-20 z-50 pt-12 sm:pt-14 md:pt-16 lg:pt-20 ml-0 sm:ml-1 md:ml-2 lg:ml-3"
+        className="
+    z-30
+    pt-12 sm:pt-14 md:pt-16 lg:pt-20
+    ml-0 sm:ml-1 md:ml-2 lg:ml-3
+    max-sm:mt-8
+  "
       >
         <div className="min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] w-full flex flex-col items-center justify-center text-center px-3 sm:px-4 md:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold tracking-[-0.01em] font-mono text-neutral-500">
