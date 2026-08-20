@@ -1,18 +1,59 @@
-# React + Vite
+# Omar Zguit | Junior Full-Stack Web Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+My personal developer portfolio showcasing my skills, projects, experience, education, and contact information.
 
-## React Compiler
+The design is inspired by modern code editors, with a responsive layout for desktop and mobile.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Features
 
-Note: This will impact Vite dev & build performances.
+* Responsive design
+* VS Code-inspired interface
+* Projects showcase
+* Skills and experience
+* Contact form
+* French & Arabic support
+* RTL support
+* CV download
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React.js
+* React Router
+* Tailwind CSS
+* i18next
+* Formspree
+* Motion
+* Lucide React
+* React Icons
+
+## Screenshots
+
+<p align="center">
+  <img src="./src/assets/home.png" width="300" />
+  <img src="./src/assets/projects.png" width="300" />
+  <img src="./src/assets/mobile.png" width="90" />
+</p>
+
+## Live Demo
+
+[🌐 https://omarzguit.netlify.app](https://omarzguit.netlify.app)
+
+## Installation
+
+```bash
+git clone https://github.com/omar-zguit-hub/my-website.git
+cd omar-dev
+npm install
+npm run dev
+```
+
+## Author
+
+**Omar Zguit**
+
+* GitHub: [omar-zguit-hub](https://github.com/omar-zguit-hub)
+* LinkedIn: [Omar Zguit](https://www.linkedin.com/in/omar-zguit-97377533a/)
+* Portfolio: [Live Demo](https://omarzguit.netlify.app)
