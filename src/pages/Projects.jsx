@@ -4,9 +4,10 @@ import { FiExternalLink } from "react-icons/fi";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import SEO from "../components/SEO";
 
 function Projects() {
-  const { t,i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const renderProjects = () => {
     return (
@@ -26,7 +27,7 @@ function Projects() {
             />
 
             <div className="p-4">
-              <Link to={`/project/${p.id}`}>
+              <Link to={`/project/${p.slug}`}>
                 <h3 className="text-xl font-semibold mb-2 hover:text-blue-600">
                   {t(p.title)}
                 </h3>
@@ -80,14 +81,29 @@ function Projects() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="flex-1 overflow-auto bg-gray-900 text-gray-100 p-2"
-    >
-      {renderProjects()}
-    </motion.div>
+    <>
+      <SEO
+        title={
+          i18n.language === "ar"
+            ? "المشاريع | عمر زكيط - مطور Full-Stack"
+            : "Projets | Omar Zguit - Développeur Full-Stack"
+        }
+        description={
+          i18n.language === "ar"
+            ? "اكتشف مشاريع الويب التي طورها عمر زكيط باستخدام React وLaravel وJavaScript وMySQL وتقنيات الويب الحديثة."
+            : "Découvrez les projets web développés par Omar Zguit avec React, Laravel, JavaScript, MySQL et les technologies web modernes."
+        }
+        canonical="https://omarzguit.me/projects"
+      />
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex-1 overflow-auto bg-gray-900 text-gray-100 p-2"
+      >
+        {renderProjects()}
+      </motion.div>
+    </>
   );
 }
 

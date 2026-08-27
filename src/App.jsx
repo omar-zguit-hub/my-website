@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 
 function App() {
   const [explorerOpen, setExplorerOpen] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -30,10 +30,7 @@ function App() {
   return (
     <div className="flex h-screen overflow-hidden bg-gray-900 text-white">
       {/* Mobile Header */}
-      <MobileHeader
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen} 
-      />
+      <MobileHeader menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
       {/* Mobile Menu Drawer */}
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
@@ -57,7 +54,7 @@ function App() {
             <Route element={<Content />}>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/project/:id" element={<ProjectDetails />} />
+              <Route path="/project/:slug" element={<ProjectDetails />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />

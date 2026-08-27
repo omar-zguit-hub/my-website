@@ -194,6 +194,10 @@ export const getFileStructure = (path) => {
     case "/contact":
       return contactFiles;
     default:
+      if (path.startsWith("/project/")) {
+        return projectFiles;
+      }
+
       return homeFiles;
   }
 };

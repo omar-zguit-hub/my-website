@@ -14,8 +14,7 @@
       "comment": "Toujours apprendre. Toujours construire."
     },
 
-    "principle": {
-      "title": "DRY",
+    "principle": { 
       "text": "Don't Repeat Yourself"
     }
   },
@@ -51,29 +50,78 @@
   "projects": {
     "code": "Code",
     "liveDemo": "Démo en ligne",
+
     "housTalib": {
       "title": "HousTalib : Plateforme de logement étudiant",
-      "description": "Une plateforme web full-stack qui met en relation les étudiants et les propriétaires afin de faciliter la recherche et la location de logements étudiants."
+      "description": "Une plateforme web full-stack qui met en relation les étudiants et les propriétaires afin de faciliter la recherche et la location de logements étudiants.",
+      "seoTitle": "HousTalib | Plateforme de logement étudiant | Omar Zguit",
+      "seoDescription": "Découvrez HousTalib, une plateforme de logement étudiant développée avec React, Laravel et MySQL pour aider les étudiants à trouver un hébergement au Maroc.",
+
+      "images": {
+        "preview": "Aperçu de la plateforme HousTalib de logement étudiant",
+        "home": "Page d'accueil de la plateforme HousTalib",
+        "search": "Interface de recherche de logements étudiants sur HousTalib",
+        "features": "Présentation des fonctionnalités de la plateforme HousTalib",
+        "mobile": "Version mobile responsive de la plateforme HousTalib"
+      }
     },
 
     "mayaSol": {
       "title": "MAYASOL : Plateforme E-Commerce",
-      "description": "Une application e-commerce full-stack permettant de consulter les produits, gérer le panier, passer des commandes et gérer les produits via une interface d'administration."
+      "description": "Une application e-commerce full-stack permettant de consulter les produits, gérer le panier, passer des commandes et gérer les produits via une interface d'administration.",
+      "seoTitle": "MAYASOL | Plateforme E-Commerce | Omar Zguit",
+      "seoDescription": "Découvrez MAYASOL, une application e-commerce full-stack développée pour gérer les produits, le panier, les commandes et l'administration d'une boutique en ligne.",
+
+      "images": {
+        "preview": "Aperçu de la plateforme e-commerce MAYASOL",
+        "home": "Page d'accueil de la plateforme MAYASOL",
+        "products": "Liste des produits disponibles sur la plateforme MAYASOL",
+        "carts": "Interface de gestion du panier sur MAYASOL",
+        "mobile": "Version mobile responsive de la plateforme MAYASOL"
+      }
     },
 
     "todoList": {
       "title": "Application Liste de tâches",
-      "description": "Une application de gestion des tâches permettant aux utilisateurs de créer, organiser, modifier, terminer et gérer leurs tâches quotidiennes grâce à une interface simple."
+      "description": "Une application de gestion des tâches permettant aux utilisateurs de créer, organiser, modifier, terminer et gérer leurs tâches quotidiennes grâce à une interface simple.",
+      "seoTitle": "Application Liste de tâches | Projet React | Omar Zguit",
+      "seoDescription": "Découvrez cette application de gestion des tâches développée avec React, permettant de créer, organiser, modifier et terminer des tâches quotidiennes avec une interface simple et responsive.",
+
+      "images": {
+        "preview": "Aperçu de l'application de gestion des tâches",
+        "start": "Page d'accueil de l'application Liste de tâches",
+        "all": "Liste de toutes les tâches dans l'application",
+        "incom": "Liste des tâches non terminées",
+        "com": "Liste des tâches terminées",
+        "delete": "Interface permettant de supprimer une tâche"
+      }
     },
 
     "weather": {
       "title": "Application Météo",
-      "description": "Une application météo responsive permettant aux utilisateurs de rechercher des villes et de consulter les conditions météorologiques actuelles grâce à une API météo."
+      "description": "Une application météo responsive permettant aux utilisateurs de rechercher des villes et de consulter les conditions météorologiques actuelles grâce à une API météo.",
+      "seoTitle": "Application Météo | React Weather App | Omar Zguit",
+      "seoDescription": "Découvrez cette application météo responsive développée avec React, permettant de rechercher des villes et d'afficher les conditions météorologiques actuelles grâce à une API météo.",
+
+      "images": {
+        "preview": "Aperçu de l'application météo développée avec React",
+        "ar": "Version arabe de l'application météo",
+        "fr": "Version française de l'application météo",
+        "mobile": "Version mobile responsive de l'application météo"
+      }
     },
 
     "ticTacToe": {
       "title": "Jeu Tic-Tac-Toe",
-      "description": "Un jeu classique de Tic-Tac-Toe développé avec React, avec un gameplay interactif, une gestion de l'état du jeu et une interface utilisateur responsive."
+      "description": "Un jeu classique de Tic-Tac-Toe développé avec React, avec un gameplay interactif, une gestion de l'état du jeu et une interface utilisateur responsive.",
+      "seoTitle": "Jeu Tic-Tac-Toe | Projet React | Omar Zguit",
+      "seoDescription": "Découvrez ce jeu de Tic-Tac-Toe développé avec React, avec une gestion de l'état du jeu, un gameplay interactif et une interface utilisateur responsive.",
+
+      "images": {
+        "to": "Interface principale du jeu Tic-Tac-Toe",
+        "do": "Partie de Tic-Tac-Toe en cours",
+        "list": "Écran affichant le joueur gagnant de la partie"
+      }
     }
   },
 
