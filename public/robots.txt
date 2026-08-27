@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omarzguit.me/sitemap.xml
