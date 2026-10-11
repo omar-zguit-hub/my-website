@@ -123,21 +123,27 @@ const Home = () => {
                       <div className="pl-3 sm:pl-4">
                         <span className="text-sky-300">name</span>
                         <span className="mx-2 text-slate-300">:</span>
-                        <span className="text-orange-300">"{t("home.profile.name")}"</span>
+                        <span className="text-orange-300">
+                          "{t("home.profile.name")}"
+                        </span>
                         <span className="text-slate-300">,</span>
                       </div>
 
                       <div className="pl-3 sm:pl-4">
                         <span className="text-sky-300">role</span>
                         <span className="mx-2 text-slate-300">:</span>
-                        <span className="text-orange-300">"{t("home.profile.field")}"</span>
+                        <span className="text-orange-300">
+                          "{t("home.profile.field")}"
+                        </span>
                         <span className="text-slate-300">,</span>
                       </div>
 
                       <div className="pl-3 sm:pl-4">
                         <span className="text-sky-300">location</span>
                         <span className="mx-2 text-slate-300">:</span>
-                        <span className="text-orange-300">"{t("home.profile.city")}"</span>
+                        <span className="text-orange-300">
+                          "{t("home.profile.city")}"
+                        </span>
                         <span className="text-slate-300">,</span>
                       </div>
 
@@ -160,9 +166,14 @@ const Home = () => {
                         <span className="text-sky-300">interests</span>
                         <span className="mx-2 text-slate-300">:</span>
                         <span className="text-amber-300">[</span>
-                        <span className="text-orange-300">"Web Development"</span>
+                        <span className="text-orange-300">
+                          "Web Development"
+                        </span>
                         <span className="text-slate-300">,</span>
-                        <span className="text-orange-300"> "Problem Solving"</span>
+                        <span className="text-orange-300">
+                          {" "}
+                          "Problem Solving"
+                        </span>
                         <span className="text-amber-300">]</span>
                         <span className="text-slate-300">,</span>
                       </div>
@@ -172,7 +183,9 @@ const Home = () => {
                         <span className="mx-2 text-slate-300">:</span>
                         <button
                           type="button"
-                          onClick={() => (window.location.href = "mailto:omar0@gmail.com")}
+                          onClick={() =>
+                            (window.location.href = "mailto:omar0@gmail.com")
+                          }
                           className="text-orange-300 transition hover:text-orange-200 hover:underline"
                           title="omar0@gmail.com"
                         >
@@ -189,12 +202,16 @@ const Home = () => {
                       </div>
 
                       <div className="pl-3 sm:pl-4">
-                        <span className="text-emerald-400">// {t("home.profile.comment")}</span>
+                        <span className="text-emerald-400">
+                          // {t("home.profile.comment")}
+                        </span>
                       </div>
 
                       <div>
                         <span className="text-amber-300">{`}`}</span>
-                        <span className="ml-2 inline-block animate-pulse text-slate-400">|</span>
+                        <span className="ml-2 inline-block animate-pulse text-slate-400">
+                          |
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -222,7 +239,10 @@ const Home = () => {
                 </div>
               </div>
 
-              <motion.div {...revealProps} className="flex items-center justify-center">
+              <motion.div
+                {...revealProps}
+                className="flex items-center justify-center"
+              >
                 <div className="relative w-full max-w-[28rem]">
                   <div className="absolute inset-4 rounded-full bg-cyan-500/10 blur-3xl" />
                   <div className="relative overflow-hidden rounded-full border border-slate-700 bg-[#202633] p-3 shadow-[0_40px_80px_rgba(14,165,233,0.10)]">
@@ -328,12 +348,21 @@ const Home = () => {
 
                 <div className="space-y-3">
                   {architectureSteps.map((step) => (
-                    <div key={step.id} className="rounded-xl border border-slate-700/70 bg-slate-900/60 p-3 sm:p-4">
+                    <div
+                      key={step.id}
+                      className="rounded-xl border border-slate-700/70 bg-slate-900/60 p-3 sm:p-4"
+                    >
                       <div className="mb-1 flex items-center justify-between gap-3">
-                        <span className="text-sm font-semibold text-cyan-200">{step.title}</span>
-                        <span className="text-[10px] uppercase tracking-[0.16em] text-slate-500">{step.id}</span>
+                        <span className="text-sm font-semibold text-cyan-200">
+                          {step.title}
+                        </span>
+                        <span className="text-[10px] uppercase tracking-[0.16em] text-slate-500">
+                          {step.id}
+                        </span>
                       </div>
-                      <p className="text-sm leading-6 text-slate-300">{step.description}</p>
+                      <p className="text-sm leading-6 text-slate-300">
+                        {step.description}
+                      </p>
                     </div>
                   ))}
                 </div>
