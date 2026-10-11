@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import profile from "../assets/profile.png";
-import CV from "../assets/CV_Omar_Zguit.pdf";
+import CV from "../assets/CV Omar Zguit.pdf";
 import SEO from "../components/SEO";
 
 function About() {

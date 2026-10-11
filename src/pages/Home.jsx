@@ -1,40 +1,30 @@
 import { projects } from "../data/projects";
 import { Link } from "react-router-dom";
-import skills from "../assets/skills.png";
-import { motion } from "motion/react";
+import profile from "../assets/profile.png";
+import skillsVisual from "../assets/skills.png";
+import { motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import SEO from "../components/SEO";
 
-const EditorCard = ({ title, children, className = "" }) => {
-  return (
-    <section
-      dir="ltr"
-      className={`relative min-h-screen w-full px-2 sm:px-3 md:px-4 lg:px-6 pt-12 sm:pt-14 md:pt-16 lg:pt-20 ${className}`}
-    >
-      <div className="sticky top-0 mx-auto max-h-[426px] w-[95%] aspect-[11/7] max-w-4xl overflow-hidden rounded-3xl border border-zinc-700 bg-[#1e1e1e] shadow-2xl">
-        {/* VS Code Header */}
-        <div className="flex h-9 sm:h-10 md:h-11 lg:h-12 items-center border-b border-zinc-700 bg-[#181818] px-2 sm:px-3 md:px-4">
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 rounded-full bg-red-500/80" />
-            <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 rounded-full bg-yellow-500/80" />
-            <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 rounded-full bg-green-500/80" />
-          </div>
-
-          <span className="ml-3 sm:ml-4 md:ml-6 text-[10px] sm:text-xs md:text-sm text-zinc-400">
-            {title}
-          </span>
-        </div>
-        {/* Content */}
-        <div className="flex-1 min-h-0 w-full overflow-hidden bg-[#1e1e1e]">
-          {children}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const Home = () => {
   const { t, i18n } = useTranslation();
+  const shouldReduceMotion = useReducedMotion();
+  const revealProps = shouldReduceMotion
+    ? {}
+    : {
+        initial: { opacity: 0, y: 22 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.2 },
+        transition: { duration: 0.45, ease: "easeOut" },
+      };
+
+  const architectureSteps = [
+    { id: "frontend", title: t("home.architecture.steps.frontend.title"), description: t("home.architecture.steps.frontend.description") },
+    { id: "http", title: t("home.architecture.steps.api.title"), description: t("home.architecture.steps.api.description") },
+    { id: "backend", title: t("home.architecture.steps.backend.title"), description: t("home.architecture.steps.backend.description") },
+    { id: "database", title: t("home.architecture.steps.database.title"), description: t("home.architecture.steps.database.description") },
+    { id: "response", title: t("home.architecture.steps.response.title"), description: t("home.architecture.steps.response.description") },
+  ];
 
   return (
     <>
@@ -51,268 +41,385 @@ const Home = () => {
         }
         canonical="https://omarzguit.me"
       />
-      <main className="min-h-screen w-full bg-[#0d1117]">
-        {/* ================= PROFILE ================= */}
 
-        <EditorCard
-          title={t("home.cards.profile")}
-          className="sticky top-0 z-10"
-        >
-          <div className="flex mt-[clamp(0.75rem,2vw,1.25rem)] pb-[clamp(0.75rem,2vw,1.25rem)]">
-            {/* Line Numbers */}
-            <div className="w-[clamp(2rem,5vw,4rem)] shrink-0 select-none pr-[clamp(0.25rem,1.2vw,1.25rem)] text-right text-[clamp(0.75rem,1.2vw,1.125rem)] text-zinc-600">
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
-              <div>4</div>
-              <div>5</div>
-              <div>6</div>
-              <div>7</div>
-              <div>8</div>
-              <div>9</div>
-              <div>10</div>
-              <div>11</div>
-            </div>
-
-            {/* Code */}
-            <div className="whitespace-nowrap text-[clamp(0.57rem,2.4vw,1.125rem)] overflow-x-auto">
-              {/* Line 1 */}
-              <div>
-                <span className="text-purple-400">const</span>
-
-                <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-blue-400">
-                  developer
-                </span>
-
-                <span className="text-zinc-300">=</span>
-
-                <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-yellow-400">
-                  {"{"}
-                </span>
-              </div>
-
-              {/* Line 2 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">name</span>
-
-                <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  :
-                </span>
-
-                <span className="text-orange-300">
-                  "{t("home.profile.name")}"
-                </span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 3 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">email</span>
-
-                <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  :
-                </span>
-
-                <span
-                  onClick={() =>
-                    (window.location.href = "mailto:omar0@gmail.com")
-                  }
-                  className="cursor-pointer text-orange-300 transition hover:text-orange-200 hover:underline"
-                  title="omar0@gmail.com"
-                >
-                  "omar0@gmail.com"
-                </span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 4 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">field</span>
-
-                <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  :
-                </span>
-
-                <span className="text-orange-300">
-                  "{t("home.profile.field")}"
-                </span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 5 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">city</span>
-
-                <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  :
-                </span>
-
-                <span className="text-orange-300">
-                  "{t("home.profile.city")}"
-                </span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 6 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">skills</span>
-
-                <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  : navigate("
-                  <Link
-                    className="hover:text-cyan-200 hover:underline"
-                    to="/skills"
-                  >
-                    /skills
-                  </Link>
-                  ")
-                </span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 7 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">projects</span>
-
-                <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  : navigate("
-                  <Link
-                    className="hover:text-cyan-200 hover:underline"
-                    to="/projects"
-                  >
-                    /projects
-                  </Link>
-                  ")
-                </span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 8 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">about</span>
-
-                <span className="ml-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  : navigate("
-                  <Link
-                    className="hover:text-cyan-200 hover:underline"
-                    to="/about"
-                  >
-                    /about
-                  </Link>
-                  ")
-                </span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 9 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-sky-300">available</span>
-
-                <span className="mx-[clamp(0.375rem,1.2vw,0.75rem)] text-zinc-300">
-                  :
-                </span>
-
-                <span className="text-blue-400">true</span>
-
-                <span className="text-zinc-300">,</span>
-              </div>
-
-              {/* Line 10 */}
-              <div className="pl-[clamp(1rem,2.5vw,2rem)]">
-                <span className="text-green-600">
-                  // {t("home.profile.comment")}
-                </span>
-              </div>
-
-              {/* Line 11 */}
-              <div>
-                <span className="text-yellow-400">{"}"}</span>
-
-                <span className="ml-[clamp(0.25rem,0.8vw,0.5rem)] animate-pulse text-zinc-400">
-                  |
-                </span>
-              </div>
-            </div>
-          </div>
-        </EditorCard>
-
-        {/* ================= PROJECTS ================= */}
-
-        <EditorCard
-          title={t("home.cards.projects")}
-          className="sticky top-2 z-20 pt-6 sm:pt-8 md:pt-10 lg:pt-12 ml-0 sm:ml-1 max-sm:mt-8"
-        >
-          <div className="flex gap-2 sm:gap-3 md:gap-4 w-full overflow-x-auto">
-            {projects.map((p, i) => (
-              <motion.div
-                key={p.name || i}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }} 
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.25,
-                }}
-                className="shrink-0 w-[88%] sm:w-[82%] md:w-[78%] lg:w-[75%]"
-              >
-                <img
-                  src={p.image}
-                  alt={p.slug}  
-                  className="block w-full h-full object-cover rounded-md sm:rounded-lg"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </EditorCard>
-
-        {/* ================= SKILLS ================= */}
-
-        <EditorCard
-          title={t("home.cards.skills")}
-          className="sticky top-4 z-30 pt-12 sm:pt-14 md:pt-16 lg:pt-20 ml-0 sm:ml-1 md:ml-2 max-sm:mt-8"
-        >
-          <div className="h-full w-full">
-            <img
-              src={skills}
-              alt={t("home.cards.skills")}
-              className="block h-full w-full object-cover"
-            />
-          </div>
-        </EditorCard>
-
-        {/* ================= PRINCIPLE ================= */}
-
-        <EditorCard
-          title={t("home.cards.principle")}
-          className="z-30 pt-8 sm:pt-10 md:pt-12 lg:pt-16 ml-0 sm:ml-1 md:ml-2 lg:ml-3 max-sm:mt-6"
-        >
-          <div className="w-fullmin-h-[200px] sm:min-h-[240px] md:min-h-[280px] lg:min-h-[320px] flex flex-col items-center justify-center text-centerpx-4 sm:px-6 md:px-8 lg:px-10gap-4 sm:gap-5 md:gap-6">
-            <h1 className="font-bold font-mono text-neutral-500 tracking-[-0.03em] leading-[0.9] text-[clamp(2.5rem,10vw,8rem)] max-w-full break-words">
-              DRY
-            </h1>
-
-            <a
-              href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono tracking-wide text-neutral-500 hover:text-neutral-300 transition-colors duration-200 relative group max-w-[90%] sm:max-w-[80%] md:max-w-[70%] leading-relaxed"
-            >
-              <span className="text-neutral-600">"</span>
-
-              <span className="text-[clamp(0.65rem,1.5vw,1.125rem)] group-hover:underline underline-offset-4">
-                {t("home.principle.text")}
+      <main className="min-h-screen w-full bg-[#0d1117] text-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-16">
+          <motion.section
+            {...revealProps}
+            className="mb-16 sm:mb-20 lg:mb-24"
+            aria-labelledby="profile-heading"
+          >
+            <div className="mb-6 flex items-center justify-between gap-3">
+              <span className="inline-flex items-center rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-200">
+                {t("home.profile.label")}
               </span>
+            </div>
 
-              <span className="text-neutral-600">"</span>
-            </a>
-          </div>
-        </EditorCard>
+            <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-10">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
+                    {t("home.profile.eyebrow")}
+                  </p>
+                  <h1 id="profile-heading" className="max-w-xl text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl lg:text-[4rem] lg:leading-[0.95]">
+                    {t("home.profile.heading")}
+                  </h1>
+                  <p className="max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
+                    {t("home.profile.intro")}
+                  </p>
+                </div>
+
+                <div className="overflow-hidden rounded-2xl border border-slate-700/80 bg-[#111827]/80 shadow-[0_30px_70px_rgba(15,23,42,0.45)] backdrop-blur-sm">
+                  <div className="flex items-center gap-2 border-b border-slate-700 bg-[#181f2b] px-4 py-3">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                    <span className="ml-2 text-[11px] font-medium uppercase tracking-[0.15em] text-slate-400">
+                      {t("home.profile.editorTitle")}
+                    </span>
+                  </div>
+
+                  <div dir={i18n.language === "ar" ? "rtl" : "ltr"} className="grid grid-cols-[auto_1fr] gap-3 px-4 py-5 sm:px-5 sm:py-6">
+                    <div className="select-none text-right text-xs leading-7 text-slate-600 sm:text-sm">
+                      {Array.from({ length: 11 }, (_, i) => (
+                        <div key={i}>{i + 1}</div>
+                      ))}
+                    </div>
+
+                    <div className="space-y-1 font-mono text-[10px] leading-7 text-slate-100 sm:text-[13px]">
+                      <div>
+                        <span className="text-violet-400">const</span>
+                        <span className="mx-1.5 text-sky-300">developer</span>
+                        <span className="text-slate-300">=</span>
+                        <span className="ml-1.5 text-amber-300">{`{`}</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-sky-300">name</span>
+                        <span className="mx-2 text-slate-300">:</span>
+                        <span className="text-orange-300">"{t("home.profile.name")}"</span>
+                        <span className="text-slate-300">,</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-sky-300">role</span>
+                        <span className="mx-2 text-slate-300">:</span>
+                        <span className="text-orange-300">"{t("home.profile.field")}"</span>
+                        <span className="text-slate-300">,</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-sky-300">location</span>
+                        <span className="mx-2 text-slate-300">:</span>
+                        <span className="text-orange-300">"{t("home.profile.city")}"</span>
+                        <span className="text-slate-300">,</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-sky-300">technologies</span>
+                        <span className="mx-2 text-slate-300">:</span>
+                        <span className="text-amber-300">[</span>
+                        <span className="text-orange-300">"React"</span>
+                        <span className="text-slate-300">,</span>
+                        <span className="text-orange-300"> "JavaScript"</span>
+                        <span className="text-slate-300">,</span>
+                        <span className="text-orange-300"> "Laravel"</span>
+                        <span className="text-slate-300">,</span>
+                        <span className="text-orange-300"> "MySQL"</span>
+                        <span className="text-amber-300">]</span>
+                        <span className="text-slate-300">,</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-sky-300">interests</span>
+                        <span className="mx-2 text-slate-300">:</span>
+                        <span className="text-amber-300">[</span>
+                        <span className="text-orange-300">"Web Development"</span>
+                        <span className="text-slate-300">,</span>
+                        <span className="text-orange-300"> "Problem Solving"</span>
+                        <span className="text-amber-300">]</span>
+                        <span className="text-slate-300">,</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-sky-300">email</span>
+                        <span className="mx-2 text-slate-300">:</span>
+                        <button
+                          type="button"
+                          onClick={() => (window.location.href = "mailto:omar0@gmail.com")}
+                          className="text-orange-300 transition hover:text-orange-200 hover:underline"
+                          title="omar0@gmail.com"
+                        >
+                          "omar0@gmail.com"
+                        </button>
+                        <span className="text-slate-300">,</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-sky-300">available</span>
+                        <span className="mx-2 text-slate-300">:</span>
+                        <span className="text-blue-400">true</span>
+                        <span className="text-slate-300">,</span>
+                      </div>
+
+                      <div className="pl-3 sm:pl-4">
+                        <span className="text-emerald-400">// {t("home.profile.comment")}</span>
+                      </div>
+
+                      <div>
+                        <span className="text-amber-300">{`}`}</span>
+                        <span className="ml-2 inline-block animate-pulse text-slate-400">|</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3 pt-1">
+                  <Link
+                    to="/projects"
+                    className="inline-flex items-center justify-center rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-4 py-2.5 text-sm font-medium text-cyan-100 transition hover:border-cyan-300 hover:bg-cyan-500/20"
+                  >
+                    {t("home.profile.cta.projects")}
+                  </Link>
+                  <Link
+                    to="/skills"
+                    className="inline-flex items-center justify-center rounded-lg border border-slate-600 bg-slate-800/80 px-4 py-2.5 text-sm font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-700/80"
+                  >
+                    {t("home.profile.cta.skills")}
+                  </Link>
+                  <Link
+                    to="/about"
+                    className="inline-flex items-center justify-center rounded-lg border border-slate-600 bg-slate-800/80 px-4 py-2.5 text-sm font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-700/80"
+                  >
+                    {t("home.profile.cta.about")}
+                  </Link>
+                </div>
+              </div>
+
+              <motion.div {...revealProps} className="flex items-center justify-center">
+                <div className="relative w-full max-w-[28rem]">
+                  <div className="absolute inset-4 rounded-full bg-cyan-500/10 blur-3xl" />
+                  <div className="relative overflow-hidden rounded-full border border-slate-700 bg-[#202633] p-3 shadow-[0_40px_80px_rgba(14,165,233,0.10)]">
+                    <div className="overflow-hidden rounded-full border border-slate-600 bg-slate-800">
+                      <img
+                        src={profile}
+                        alt={t("home.profile.portraitAlt")}
+                        className="block h-[320px] w-full object-cover sm:h-[380px] lg:h-[460px]"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            {...revealProps}
+            className="mb-16 sm:mb-20 lg:mb-24"
+            aria-labelledby="projects-heading"
+          >
+            <div className="mb-6 flex items-end justify-between gap-4">
+              <div>
+                <p className="mb-2 text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
+                  {t("home.sections.projectsEyebrow")}
+                </p>
+                <h2 id="projects-heading" className="text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+                  {t("home.sections.projects")}
+                </h2>
+              </div>
+              <Link to="/projects" className="hidden text-sm text-cyan-300 transition hover:text-cyan-200 sm:inline-flex">
+                {t("home.profile.cta.projects")}
+              </Link>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-12">
+              {projects.map((project, index) => {
+                const spanClass =
+                  index % 5 === 0
+                    ? "md:col-span-5"
+                    : index % 5 === 1
+                      ? "md:col-span-7"
+                      : index % 5 === 2
+                        ? "md:col-span-6"
+                        : index % 5 === 3
+                          ? "md:col-span-4"
+                          : "md:col-span-8";
+
+                return (
+                  <motion.article
+                    key={project.slug}
+                    {...(shouldReduceMotion ? {} : { initial: { opacity: 0, y: 18 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.2 }, transition: { duration: 0.45, delay: index * 0.08, ease: "easeOut" } })}
+                    className={`${spanClass} group`}
+                  >
+                    <Link to={`/project/${project.slug}`} className="block rounded-[1.5rem] border border-slate-700/80 bg-[#111827]/70 p-3 transition hover:border-cyan-500/40 hover:bg-[#101a2a]">
+                      <div className={`overflow-hidden rounded-[1.1rem] border border-slate-700/80 bg-slate-900 ${index % 2 === 0 ? "rotate-[-1deg]" : index % 3 === 0 ? "rotate-[1deg]" : ""}`}>
+                        <img
+                          src={project.image}
+                          alt={t(project.images?.[0]?.alt || project.slug)}
+                          className="block h-[220px] w-full object-cover transition duration-500 group-hover:scale-[1.04] sm:h-[260px] md:h-[300px] lg:h-[340px]"
+                        />
+                      </div>
+
+                      <div className="mt-4 space-y-2 px-1 pb-1">
+                        <div className="flex items-center justify-between gap-3">
+                          <h3 className="text-lg font-semibold text-white sm:text-xl">
+                            {t(project.title)}
+                          </h3>
+                          <span className="text-base text-cyan-300 transition group-hover:translate-x-0.5 group-hover:text-cyan-200">
+                            ↗
+                          </span>
+                        </div>
+                        <p className="text-sm leading-6 text-slate-300">
+                          {t(project.description)}
+                        </p>
+                      </div>
+                    </Link>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </motion.section>
+
+          <motion.section
+            {...revealProps}
+            className="mb-16 sm:mb-20 lg:mb-24"
+            aria-labelledby="architecture-heading"
+          >
+            <div className="grid gap-8 rounded-[2rem] border border-slate-700/80 bg-[#0d1621] p-5 shadow-[0_30px_60px_rgba(15,23,42,0.35)] sm:p-7 lg:grid-cols-[1.1fr_0.9fr] lg:p-8">
+              <div className="overflow-hidden rounded-[1.5rem] border border-slate-700 bg-slate-950/70 p-3">
+                <img
+                  src={skillsVisual}
+                  alt={t("home.architecture.diagramAlt")}
+                  className="block h-full w-full rounded-[1.1rem] object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col justify-center">
+                <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-cyan-300/80">
+                  {t("home.architecture.eyebrow")}
+                </p>
+                <h2 id="architecture-heading" className="mb-3 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+                  {t("home.architecture.title")}
+                </h2>
+                <p className="mb-5 max-w-xl text-base leading-7 text-slate-300">
+                  {t("home.architecture.intro")}
+                </p>
+
+                <div className="space-y-3">
+                  {architectureSteps.map((step) => (
+                    <div key={step.id} className="rounded-xl border border-slate-700/70 bg-slate-900/60 p-3 sm:p-4">
+                      <div className="mb-1 flex items-center justify-between gap-3">
+                        <span className="text-sm font-semibold text-cyan-200">{step.title}</span>
+                        <span className="text-[10px] uppercase tracking-[0.16em] text-slate-500">{step.id}</span>
+                      </div>
+                      <p className="text-sm leading-6 text-slate-300">{step.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.section>
+
+          <motion.section
+            {...revealProps}
+            className="pb-2"
+            aria-labelledby="dry-heading"
+          >
+            <div className="grid gap-8 rounded-[2rem] border border-slate-700/80 bg-[#111827]/70 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.3)] sm:p-7 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
+              <article className="flex flex-col justify-center">
+                <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-violet-300/80">
+                  {t("home.dry.eyebrow")}
+                </p>
+                <h2 id="dry-heading" className="mb-4 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+                  {t("home.dry.title")}
+                </h2>
+                <p className="mb-4 text-base leading-7 text-slate-300">
+                  {t("home.dry.definition")}
+                </p>
+                <p className="mb-5 text-base leading-7 text-slate-300">
+                  {t("home.dry.reason")}
+                </p>
+
+                <div className="rounded-2xl border border-slate-700 bg-[#0d1621] p-4">
+                  <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                    {t("home.dry.beforeAfter.before")}
+                  </p>
+                  <pre className="overflow-x-auto rounded-xl border border-slate-700 bg-slate-950/90 p-3 font-mono text-[11px] leading-6 text-slate-200">
+{`const totalA = priceA * quantityA;
+const totalB = priceB * quantityB;`}
+                  </pre>
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-slate-400">
+                    {t("home.dry.beforeAfter.after")}
+                  </p>
+                  <pre className="mt-2 overflow-x-auto rounded-xl border border-cyan-500/25 bg-slate-950/90 p-3 font-mono text-[11px] leading-6 text-cyan-100">
+{`const calculateTotal = (price, quantity) => price * quantity;`}
+                  </pre>
+                </div>
+              </article>
+
+              <div className="flex items-center justify-center">
+                <div className="w-full max-w-[42rem] rounded-[1.5rem] border border-slate-700 bg-[#0d1621] p-4 sm:p-5">
+                  <div className="mb-4 flex items-center justify-between gap-3">
+                    <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
+                      {t("home.dry.visualTitle")}
+                    </span>
+                    <a
+                      href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-violet-300 transition hover:text-violet-200"
+                    >
+                      Wikipedia
+                    </a>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="space-y-3">
+                      <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3">
+                        <div className="mb-2 h-2 w-16 rounded bg-rose-300/70" />
+                        <div className="space-y-2">
+                          <div className="h-2 w-full rounded bg-slate-700" />
+                          <div className="h-2 w-4/5 rounded bg-slate-700" />
+                          <div className="h-2 w-3/5 rounded bg-slate-700" />
+                        </div>
+                      </div>
+                      <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3">
+                        <div className="mb-2 h-2 w-16 rounded bg-rose-300/70" />
+                        <div className="space-y-2">
+                          <div className="h-2 w-full rounded bg-slate-700" />
+                          <div className="h-2 w-5/6 rounded bg-slate-700" />
+                          <div className="h-2 w-3/5 rounded bg-slate-700" />
+                        </div>
+                      </div>
+                      <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3">
+                        <div className="mb-2 h-2 w-16 rounded bg-rose-300/70" />
+                        <div className="space-y-2">
+                          <div className="h-2 w-full rounded bg-slate-700" />
+                          <div className="h-2 w-4/5 rounded bg-slate-700" />
+                          <div className="h-2 w-2/3 rounded bg-slate-700" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-center">
+                      <div className="flex w-full flex-col items-center gap-4">
+                        <div className="h-14 w-full max-w-[120px] rounded-full border border-cyan-500/40 bg-cyan-500/10" />
+                        <div className="flex w-full items-center justify-center gap-3">
+                          <div className="h-px flex-1 bg-gradient-to-r from-rose-500/50 to-transparent" />
+                          <div className="h-3 w-3 rounded-full bg-cyan-300" />
+                          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/50" />
+                        </div>
+                        <div className="w-full rounded-2xl border border-cyan-500/30 bg-cyan-500/10 p-4 text-center text-sm font-medium text-cyan-100">
+                          {t("home.dry.sharedModule")}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.section>
+        </div>
       </main>
     </>
   );

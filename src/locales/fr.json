@@ -7,11 +7,71 @@
       "principle": "principe.js"
     },
 
-    "profile": { 
-      "name": "Omar Zguit", 
-      "field": "Développeur Fullstack Junior",
-      "city": "Tinghir - Drâa-Tafilalet", 
-      "comment": "Toujours apprendre. Toujours construire."
+    "profile": {
+      "name": "Omar Zguit",
+      "field": "Développeur Web Full Stack Junior",
+      "city": "Tinghir - Drâa-Tafilalet",
+      "comment": "Toujours apprendre. Toujours construire.",
+      "label": "Développeur junior",
+      "eyebrow": "Portfolio",
+      "heading": "Je construis des expériences web fiables et élégantes.",
+      "intro": "Je conçois des interfaces responsives, des applications complètes et des solutions claires qui allient fonctionnalité, lisibilité et performance.",
+      "editorTitle": "profil.js",
+      "portraitAlt": "Portrait d'Omar Zguit",
+      "cta": {
+        "projects": "Voir les projets",
+        "skills": "Voir les compétences",
+        "about": "À propos"
+      }
+    },
+
+    "sections": {
+      "projectsEyebrow": "Sélection",
+      "projects": "Projets",
+      "architecture": "Architecture de développement"
+    },
+
+    "architecture": {
+      "eyebrow": "Comment fonctionne le web",
+      "title": "Architecture de développement",
+      "diagramAlt": "Schéma de l'architecture frontend, API, backend et base de données",
+      "intro": "Un navigateur affiche l'interface, envoie des requêtes HTTP au serveur et reçoit une réponse. Le frontend montre les données, tandis que le backend traite la logique et la base de données garde les informations.",
+      "steps": {
+        "frontend": {
+          "title": "Frontend",
+          "description": "L'interface que l'utilisateur voit et avec laquelle il interagit, construite avec React, HTML, CSS et JavaScript."
+        },
+        "api": {
+          "title": "API",
+          "description": "Le frontend communique avec le serveur via des requêtes HTTP, en envoyant des données ou en demandant des informations."
+        },
+        "backend": {
+          "title": "Backend",
+          "description": "Laravel et PHP traitent la logique de l'application, vérifient les règles métier et renvoient les résultats au frontend."
+        },
+        "database": {
+          "title": "Base de données",
+          "description": "MySQL stocke et récupère les informations nécessaires à l'application, comme les utilisateurs, les produits ou les contenus."
+        },
+        "response": {
+          "title": "Réponse",
+          "description": "Le serveur répond au navigateur avec les résultats attendus, puis l'interface les affiche à l'utilisateur."
+        }
+      }
+    },
+
+    "dry": {
+      "eyebrow": "Principe de conception",
+      "title": "DRY — Don't Repeat Yourself",
+      "definition": "La connaissance et la logique ne doivent pas être dupliquées inutilement dans un projet. Quand la même règle se répète, elle mérite d'être centralisée.",
+      "reason": "Cette approche rend le code plus maintenable, plus cohérent et plus simple à modifier sans risquer d'introduire des écarts entre plusieurs parties d'une application.",
+      "beforeAfter": {
+        "before": "Avant",
+        "after": "Après"
+      },
+      "visualTitle": "Logique répétée vs logique réutilisable",
+      "sharedModule": "Module réutilisable",
+      "note": "Le but n'est pas de factoriser à tout prix, mais d'abstraire ce qui est vraiment partagé."
     },
 
     "principle": { 
@@ -149,7 +209,7 @@
 
   "about": {
     "name": "Omar Zguit",
-    "role": "Développeur Full-Stack Junior",
+    "role": "Développeur Web Full-Stack Junior",
     "location": "Maroc, Tinghir",
     "downloadCV": "Télécharger le CV",
 
