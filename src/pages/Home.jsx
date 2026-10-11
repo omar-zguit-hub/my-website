@@ -19,11 +19,31 @@ const Home = () => {
       };
 
   const architectureSteps = [
-    { id: "frontend", title: t("home.architecture.steps.frontend.title"), description: t("home.architecture.steps.frontend.description") },
-    { id: "http", title: t("home.architecture.steps.api.title"), description: t("home.architecture.steps.api.description") },
-    { id: "backend", title: t("home.architecture.steps.backend.title"), description: t("home.architecture.steps.backend.description") },
-    { id: "database", title: t("home.architecture.steps.database.title"), description: t("home.architecture.steps.database.description") },
-    { id: "response", title: t("home.architecture.steps.response.title"), description: t("home.architecture.steps.response.description") },
+    {
+      id: "frontend",
+      title: t("home.architecture.steps.frontend.title"),
+      description: t("home.architecture.steps.frontend.description"),
+    },
+    {
+      id: "api",
+      title: t("home.architecture.steps.api.title"),
+      description: t("home.architecture.steps.api.description"),
+    },
+    {
+      id: "backend",
+      title: t("home.architecture.steps.backend.title"),
+      description: t("home.architecture.steps.backend.description"),
+    },
+    {
+      id: "database",
+      title: t("home.architecture.steps.database.title"),
+      description: t("home.architecture.steps.database.description"),
+    },
+    {
+      id: "response",
+      title: t("home.architecture.steps.response.title"),
+      description: t("home.architecture.steps.response.description"),
+    },
   ];
 
   return (
@@ -61,7 +81,10 @@ const Home = () => {
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
                     {t("home.profile.eyebrow")}
                   </p>
-                  <h1 id="profile-heading" className="max-w-xl text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl lg:text-[4rem] lg:leading-[0.95]">
+                  <h1
+                    id="profile-heading"
+                    className="max-w-xl text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl lg:text-[4rem] lg:leading-[0.95]"
+                  >
                     {t("home.profile.heading")}
                   </h1>
                   <p className="max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
@@ -79,7 +102,10 @@ const Home = () => {
                     </span>
                   </div>
 
-                  <div dir={i18n.language === "ar" ? "rtl" : "ltr"} className="grid grid-cols-[auto_1fr] gap-3 px-4 py-5 sm:px-5 sm:py-6">
+                  <div
+                    dir={i18n.language === "ar" ? "rtl" : "ltr"}
+                    className="grid grid-cols-[auto_1fr] gap-3 px-4 py-5 sm:px-5 sm:py-6"
+                  >
                     <div className="select-none text-right text-xs leading-7 text-slate-600 sm:text-sm">
                       {Array.from({ length: 11 }, (_, i) => (
                         <div key={i}>{i + 1}</div>
@@ -220,63 +246,55 @@ const Home = () => {
           >
             <div className="mb-6 flex items-end justify-between gap-4">
               <div>
-                <p className="mb-2 text-xs font-medium uppercase tracking-[0.22em] text-slate-400">
-                  {t("home.sections.projectsEyebrow")}
-                </p>
-                <h2 id="projects-heading" className="text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+                <h2
+                  id="projects-heading"
+                  className="text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl"
+                >
                   {t("home.sections.projects")}
                 </h2>
               </div>
-              <Link to="/projects" className="hidden text-sm text-cyan-300 transition hover:text-cyan-200 sm:inline-flex">
+              <Link
+                to="/projects"
+                className="hidden text-sm text-cyan-300 transition hover:text-cyan-200 sm:inline-flex"
+              >
                 {t("home.profile.cta.projects")}
               </Link>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-12">
-              {projects.map((project, index) => {
-                const spanClass =
-                  index % 5 === 0
-                    ? "md:col-span-5"
-                    : index % 5 === 1
-                      ? "md:col-span-7"
-                      : index % 5 === 2
-                        ? "md:col-span-6"
-                        : index % 5 === 3
-                          ? "md:col-span-4"
-                          : "md:col-span-8";
-
-                return (
+            <div className="overflow-x-auto pb-3 [scrollbar-color:#475569_#0f172a] [scrollbar-width:thin]">
+              <div className="flex min-w-max gap-4 sm:gap-5">
+                {projects.map((project, index) => (
                   <motion.article
                     key={project.slug}
-                    {...(shouldReduceMotion ? {} : { initial: { opacity: 0, y: 18 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.2 }, transition: { duration: 0.45, delay: index * 0.08, ease: "easeOut" } })}
-                    className={`${spanClass} group`}
+                    {...(shouldReduceMotion
+                      ? {}
+                      : {
+                          initial: { opacity: 0, y: 18 },
+                          whileInView: { opacity: 1, y: 0 },
+                          viewport: { once: true, amount: 0.2 },
+                          transition: {
+                            duration: 0.45,
+                            delay: index * 0.08,
+                            ease: "easeOut",
+                          },
+                        })}
+                    className="group w-[82vw] shrink-0 sm:w-[58vw] lg:w-[34vw]"
                   >
-                    <Link to={`/project/${project.slug}`} className="block rounded-[1.5rem] border border-slate-700/80 bg-[#111827]/70 p-3 transition hover:border-cyan-500/40 hover:bg-[#101a2a]">
-                      <div className={`overflow-hidden rounded-[1.1rem] border border-slate-700/80 bg-slate-900 ${index % 2 === 0 ? "rotate-[-1deg]" : index % 3 === 0 ? "rotate-[1deg]" : ""}`}>
+                    <Link
+                      to={`/project/${project.slug}`}
+                      className="block overflow-hidden rounded-[1.5rem] border border-slate-700/80 bg-[#111827]/70 p-2 transition duration-300 hover:border-cyan-500/40 hover:bg-[#101a2a]"
+                    >
+                      <div className="overflow-hidden rounded-[1.1rem] border border-slate-700/80 bg-slate-900">
                         <img
                           src={project.image}
                           alt={t(project.images?.[0]?.alt || project.slug)}
-                          className="block h-[220px] w-full object-cover transition duration-500 group-hover:scale-[1.04] sm:h-[260px] md:h-[300px] lg:h-[340px]"
+                          className="block h-[220px] w-full object-cover transition duration-500 group-hover:scale-[1.04] sm:h-[260px] lg:h-[300px]"
                         />
-                      </div>
-
-                      <div className="mt-4 space-y-2 px-1 pb-1">
-                        <div className="flex items-center justify-between gap-3">
-                          <h3 className="text-lg font-semibold text-white sm:text-xl">
-                            {t(project.title)}
-                          </h3>
-                          <span className="text-base text-cyan-300 transition group-hover:translate-x-0.5 group-hover:text-cyan-200">
-                            ↗
-                          </span>
-                        </div>
-                        <p className="text-sm leading-6 text-slate-300">
-                          {t(project.description)}
-                        </p>
                       </div>
                     </Link>
                   </motion.article>
-                );
-              })}
+                ))}
+              </div>
             </div>
           </motion.section>
 
@@ -298,7 +316,10 @@ const Home = () => {
                 <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-cyan-300/80">
                   {t("home.architecture.eyebrow")}
                 </p>
-                <h2 id="architecture-heading" className="mb-3 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
+                <h2
+                  id="architecture-heading"
+                  className="mb-3 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl"
+                >
                   {t("home.architecture.title")}
                 </h2>
                 <p className="mb-5 max-w-xl text-base leading-7 text-slate-300">
@@ -325,98 +346,27 @@ const Home = () => {
             className="pb-2"
             aria-labelledby="dry-heading"
           >
-            <div className="grid gap-8 rounded-[2rem] border border-slate-700/80 bg-[#111827]/70 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.3)] sm:p-7 lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
-              <article className="flex flex-col justify-center">
-                <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-violet-300/80">
-                  {t("home.dry.eyebrow")}
-                </p>
-                <h2 id="dry-heading" className="mb-4 text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
-                  {t("home.dry.title")}
+            <div className="rounded-[2rem] border border-slate-700/80 bg-[#111827]/70 px-5 py-10 text-center shadow-[0_30px_80px_rgba(15,23,42,0.3)] sm:px-7 lg:px-8">
+              <a
+                href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block transition hover:text-cyan-200"
+              >
+                <h2
+                  id="dry-heading"
+                  className="text-5xl font-bold tracking-[-0.06em] text-slate-100 sm:text-6xl lg:text-8xl"
+                >
+                  DRY
                 </h2>
-                <p className="mb-4 text-base leading-7 text-slate-300">
-                  {t("home.dry.definition")}
+                <p className="mt-3 text-base tracking-[0.08em] text-slate-300 sm:text-lg">
+                  "Don't Repeat Yourself"
                 </p>
-                <p className="mb-5 text-base leading-7 text-slate-300">
-                  {t("home.dry.reason")}
-                </p>
+              </a>
 
-                <div className="rounded-2xl border border-slate-700 bg-[#0d1621] p-4">
-                  <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
-                    {t("home.dry.beforeAfter.before")}
-                  </p>
-                  <pre className="overflow-x-auto rounded-xl border border-slate-700 bg-slate-950/90 p-3 font-mono text-[11px] leading-6 text-slate-200">
-{`const totalA = priceA * quantityA;
-const totalB = priceB * quantityB;`}
-                  </pre>
-                  <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-slate-400">
-                    {t("home.dry.beforeAfter.after")}
-                  </p>
-                  <pre className="mt-2 overflow-x-auto rounded-xl border border-cyan-500/25 bg-slate-950/90 p-3 font-mono text-[11px] leading-6 text-cyan-100">
-{`const calculateTotal = (price, quantity) => price * quantity;`}
-                  </pre>
-                </div>
-              </article>
-
-              <div className="flex items-center justify-center">
-                <div className="w-full max-w-[42rem] rounded-[1.5rem] border border-slate-700 bg-[#0d1621] p-4 sm:p-5">
-                  <div className="mb-4 flex items-center justify-between gap-3">
-                    <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-400">
-                      {t("home.dry.visualTitle")}
-                    </span>
-                    <a
-                      href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-violet-300 transition hover:text-violet-200"
-                    >
-                      Wikipedia
-                    </a>
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="space-y-3">
-                      <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3">
-                        <div className="mb-2 h-2 w-16 rounded bg-rose-300/70" />
-                        <div className="space-y-2">
-                          <div className="h-2 w-full rounded bg-slate-700" />
-                          <div className="h-2 w-4/5 rounded bg-slate-700" />
-                          <div className="h-2 w-3/5 rounded bg-slate-700" />
-                        </div>
-                      </div>
-                      <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3">
-                        <div className="mb-2 h-2 w-16 rounded bg-rose-300/70" />
-                        <div className="space-y-2">
-                          <div className="h-2 w-full rounded bg-slate-700" />
-                          <div className="h-2 w-5/6 rounded bg-slate-700" />
-                          <div className="h-2 w-3/5 rounded bg-slate-700" />
-                        </div>
-                      </div>
-                      <div className="rounded-xl border border-rose-500/30 bg-rose-500/10 p-3">
-                        <div className="mb-2 h-2 w-16 rounded bg-rose-300/70" />
-                        <div className="space-y-2">
-                          <div className="h-2 w-full rounded bg-slate-700" />
-                          <div className="h-2 w-4/5 rounded bg-slate-700" />
-                          <div className="h-2 w-2/3 rounded bg-slate-700" />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-center">
-                      <div className="flex w-full flex-col items-center gap-4">
-                        <div className="h-14 w-full max-w-[120px] rounded-full border border-cyan-500/40 bg-cyan-500/10" />
-                        <div className="flex w-full items-center justify-center gap-3">
-                          <div className="h-px flex-1 bg-gradient-to-r from-rose-500/50 to-transparent" />
-                          <div className="h-3 w-3 rounded-full bg-cyan-300" />
-                          <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/50" />
-                        </div>
-                        <div className="w-full rounded-2xl border border-cyan-500/30 bg-cyan-500/10 p-4 text-center text-sm font-medium text-cyan-100">
-                          {t("home.dry.sharedModule")}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <p className="mx-auto mt-6 max-w-xl text-sm text-slate-400 sm:text-base">
+                Discover the principle behind cleaner, more maintainable code.
+              </p>
             </div>
           </motion.section>
         </div>
